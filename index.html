@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Min Kaung Thant | Robotics &amp; AI Engineer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-error": "#ffffff",
+          "tertiary": "#51535a",
+          "primary-container": "#2b59ff",
+          "on-background": "#191c1c",
+          "tertiary-fixed-dim": "#c5c6ce",
+          "inverse-primary": "#b9c3ff",
+          "surface-container-highest": "#e1e3e3",
+          "error": "#ba1a1a",
+          "on-secondary-fixed-variant": "#3c4d00",
+          "tertiary-fixed": "#e2e2ea",
+          "surface-container": "#edeeee",
+          "on-primary-container": "#ecedff",
+          "on-primary-fixed": "#001356",
+          "primary-fixed-dim": "#b9c3ff",
+          "on-surface-variant": "#434656",
+          "surface-variant": "#e1e3e3",
+          "tertiary-container": "#6a6b72",
+          "outline": "#747688",
+          "surface-container-lowest": "#ffffff",
+          "surface-container-low": "#f3f4f4",
+          "secondary-container": "#d0ef74",
+          "primary": "#003fdd",
+          "surface": "#f8f9f9",
+          "on-secondary-fixed": "#161e00",
+          "on-surface": "#191c1c",
+          "secondary-fixed": "#d0ef74",
+          "on-primary": "#ffffff",
+          "background": "#f8f9f9",
+          "on-tertiary": "#ffffff",
+          "outline-variant": "#c4c5d9",
+          "on-secondary-container": "#566c00",
+          "on-error-container": "#93000a",
+          "secondary": "#516600",
+          "on-primary-fixed-variant": "#0035be",
+          "surface-dim": "#d9dada",
+          "surface-bright": "#f8f9f9",
+          "on-tertiary-fixed-variant": "#45464d",
+          "inverse-surface": "#2e3131",
+          "inverse-on-surface": "#f0f1f1",
+          "surface-container-high": "#e7e8e8",
+          "primary-fixed": "#dde1ff",
+          "on-tertiary-container": "#ededf5",
+          "on-tertiary-fixed": "#191b21",
+          "error-container": "#ffdad6",
+          "on-secondary": "#ffffff",
+          "secondary-fixed-dim": "#b5d25b",
+          "surface-tint": "#1049f1"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"
+        },
+        "spacing": {
+          "sm": "16px", "lg": "40px", "gutter": "24px", "base": "4px",
+          "md": "24px", "xs": "8px", "container-max": "1280px", "xl": "64px"
+        },
+        "fontFamily": {
+          "label-mono": ["IBM Plex Mono"], "body-lg": ["Inter"],
+          "headline-sm": ["Bricolage Grotesque"], "headline-md": ["Bricolage Grotesque"],
+          "body-md": ["Inter"], "body-sm": ["Inter"],
+          "display-lg": ["Bricolage Grotesque"], "display-xl": ["Bricolage Grotesque"]
+        },
+        "fontSize": {
+          "label-mono": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+          "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+          "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+          "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+          "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+          "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+          "display-lg": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "display-xl": ["84px", {"lineHeight": "92px", "letterSpacing": "-0.04em", "fontWeight": "800"}]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  .sticker-element { transform: rotate(-3deg); z-index: 10; }
+  .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+  .custom-scrollbar::-webkit-scrollbar-thumb { background: #003fdd; border-radius: 10px; }
+  body { min-height: max(884px, 100dvh); }
+  /* cert scroll on mobile */
+  .cert-scroll { scrollbar-width: none; }
+  .cert-scroll::-webkit-scrollbar { display: none; }
+</style>
+</head>
+
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+
+<!-- ── NAV ─────────────────────────────────────────────── -->
+<header class="w-full sticky top-0 z-50 bg-background border-b border-outline-variant">
+  <div class="flex justify-between items-center px-md py-sm max-w-container-max mx-auto">
+    <div class="flex items-center gap-xs">
+      <span class="material-symbols-outlined text-primary" style="font-variation-settings:'FILL' 1;">smart_toy</span>
+      <span class="font-headline-sm text-headline-sm font-bold text-on-background" style="font-size:17px;">trey.</span>
+    </div>
+    <nav class="hidden md:flex gap-md items-center">
+      <a class="text-primary font-bold transition-colors" href="#">Home</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors" href="#work">Work</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors" href="#about">About</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors" href="#certs">Certs</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors" href="#contact">Contact</a>
+    </nav>
+    <a href="mailto:treyvonmin@gmail.com" class="bg-primary text-on-primary px-md py-xs rounded-lg font-label-mono text-label-mono active:scale-95 transition-transform duration-150">
+      Hire Me
+    </a>
+  </div>
+</header>
+
+<main class="max-w-container-max mx-auto px-md pt-lg pb-xl space-y-xl">
+
+  <!-- ── HERO ──────────────────────────────────────────── -->
+  <section class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center min-h-[618px]">
+    <div class="md:col-span-7 space-y-md">
+      <div class="inline-flex items-center gap-xs px-sm py-xs bg-secondary-container text-on-secondary-container rounded-full font-label-mono text-label-mono sticker-element w-fit">
+        <span class="material-symbols-outlined text-[16px]">bolt</span>
+        Available for opportunities · Bangkok, Thailand
+      </div>
+      <h2 class="font-display-xl text-display-xl tracking-tight leading-none">
+        Min Kaung <span class="text-primary">Thant</span>
+      </h2>
+      <div class="space-y-sm">
+        <p class="font-headline-sm text-headline-sm text-tertiary" style="font-size:18px;">
+          Robotics &amp; AI Engineer &nbsp;/&nbsp; NLP Specialist &nbsp;/&nbsp; Solution Engineer
+        </p>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+          Building intelligent systems at the intersection of AI, language, and human experience.
+          KMITL graduate with XAI research experience at NIT Sendai, Japan.
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-sm pt-md">
+        <a href="#work" class="bg-primary text-on-primary px-xl py-sm rounded-lg font-bold hover:brightness-110 transition-all flex items-center gap-xs">
+          View My Work <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+        <a href="https://linkedin.com/in/min-kaung-thant-1381a8217" target="_blank" class="border-[1.5px] border-tertiary text-tertiary px-xl py-sm rounded-lg font-bold hover:bg-surface-container transition-all">
+          LinkedIn
+        </a>
+      </div>
+    </div>
+
+    <div class="md:col-span-5 relative">
+      <div class="bg-primary aspect-square rounded-xl overflow-hidden shadow-2xl relative rotate-2">
+        <img alt="Futuristic AI Robotics" class="w-full h-full object-cover opacity-80 mix-blend-multiply"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDh3kweTy-xw7jSsWn_147T7ko3dbPpXKumlumwfUz6VvytD1OgUBUfY3wKyImx19aYAMvEhO8UHb7XVFZNAPM8Ol83jgyKyzC8W3MyLQxzr8JEbnInlZu-tN8498oyYYpANaGLmKzbScCAufMetY58IfDeoJtSZ6nOPK1jco4XL3AS-KWjkD6NctLp2Ev3H4YUPPlEddtWuhymAgC3BQGVKjUUsP-PHDOec-yLcnrR1ZyvPTeRihSXzJtTaLYqXEDKiQj2Ueu4PH8"/>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <span class="font-display-xl text-white text-[120px] opacity-20">2026</span>
+        </div>
+      </div>
+      <div class="absolute -bottom-xs -left-xs bg-white p-md border border-outline-variant rounded-xl shadow-lg sticker-element max-w-[210px]">
+        <p class="font-label-mono text-label-mono text-primary uppercase mb-xs">Expertise</p>
+        <p class="font-body-sm text-body-sm font-bold">XAI · NLP · Robotics · Embedded AI</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ─────────────────────────────────────────── -->
+  <section class="grid grid-cols-1 md:grid-cols-3 gap-gutter" id="about">
+    <div class="md:col-span-1 bg-white p-md border border-outline-variant rounded-xl flex flex-col justify-between">
+      <div>
+        <h3 class="font-headline-sm text-headline-sm mb-md flex items-center gap-xs">
+          <span class="material-symbols-outlined text-primary">person</span> Introduction
+        </h3>
+        <p class="font-body-md text-body-md text-on-surface-variant">
+          Robotics &amp; AI Engineering graduate from <strong class="text-on-surface">KMITL, Bangkok</strong>.
+          I conducted XAI research at <strong class="text-on-surface">NIT Sendai, Japan</strong> and
+          work as an NLP &amp; audio annotation specialist. I believe AI should be transparent,
+          inclusive, and human-centered.
+        </p>
+      </div>
+      <div class="mt-xl space-y-sm">
+        <div class="flex justify-between items-center py-xs border-b border-surface-container">
+          <span class="font-label-mono text-label-mono text-tertiary">Location</span>
+          <span class="font-body-sm text-body-sm font-bold">Bangkok, Thailand</span>
+        </div>
+        <div class="flex justify-between items-center py-xs border-b border-surface-container">
+          <span class="font-label-mono text-label-mono text-tertiary">Languages</span>
+          <span class="font-body-sm text-body-sm font-bold">EN · MY · JA · ZH</span>
+        </div>
+      </div>
+      <div class="mt-md grid grid-cols-2 gap-sm">
+        <div class="bg-surface-container-low rounded-xl p-sm flex flex-col gap-xs">
+          <span class="font-label-mono text-label-mono text-tertiary">Experience</span>
+          <span class="font-body-sm text-body-sm font-bold">4+ Years</span>
+        </div>
+        <div class="bg-surface-container-low rounded-xl p-sm flex flex-col gap-xs">
+          <span class="font-label-mono text-label-mono text-tertiary">Education</span>
+          <span class="font-body-sm text-body-sm font-bold">BE Robotics &amp; AI, KMITL</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="md:col-span-2 space-y-gutter">
+      <div class="bg-white p-md border border-outline-variant rounded-xl">
+        <h3 class="font-headline-sm text-headline-sm mb-md">Core Skills</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-sm">
+          <div class="p-sm bg-surface-container-low rounded-lg border border-transparent hover:border-primary transition-all">
+            <div class="flex items-center gap-xs mb-xs">
+              <span class="material-symbols-outlined text-primary" style="font-variation-settings:'FILL' 1;">psychology</span>
+              <h4 class="font-body-md text-body-md font-bold">AI &amp; ML</h4>
+            </div>
+            <p class="text-body-sm text-on-surface-variant">NLP, XAI, Computer Vision, LIME, SHAP, Grad-CAM, Data Annotation, Audio Processing.</p>
+          </div>
+          <div class="p-sm bg-surface-container-low rounded-lg border border-transparent hover:border-primary transition-all">
+            <div class="flex items-center gap-xs mb-xs">
+              <span class="material-symbols-outlined text-primary" style="font-variation-settings:'FILL' 1;">precision_manufacturing</span>
+              <h4 class="font-body-md text-body-md font-bold">Robotics</h4>
+            </div>
+            <p class="text-body-sm text-on-surface-variant">ROS, Microcontrollers, Sensor Integration, Embedded C, PID Control, Line-following.</p>
+          </div>
+          <div class="p-sm bg-surface-container-low rounded-lg border border-transparent hover:border-primary transition-all">
+            <div class="flex items-center gap-xs mb-xs">
+              <span class="material-symbols-outlined text-primary" style="font-variation-settings:'FILL' 1;">terminal</span>
+              <h4 class="font-body-md text-body-md font-bold">Tools</h4>
+            </div>
+            <p class="text-body-sm text-on-surface-variant">Python, AWS, Git, Jupyter, Linux, Google Data Analytics, Notion.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-gutter">
+        <div class="bg-secondary-container p-md rounded-xl text-on-secondary-container relative overflow-hidden">
+          <span class="material-symbols-outlined absolute -bottom-xl -right-xl text-[120px] opacity-10">military_tech</span>
+          <h4 class="font-label-mono text-label-mono mb-sm uppercase">Recent Certification</h4>
+          <p class="font-headline-sm text-headline-sm leading-tight">Google AI Professional Certificate</p>
+          <p class="mt-xs text-body-sm opacity-80">Google · Coursera · Apr 2026</p>
+        </div>
+        <div class="bg-primary p-md rounded-xl text-on-primary relative overflow-hidden">
+          <span class="material-symbols-outlined absolute -bottom-xl -right-xl text-[120px] opacity-10">code</span>
+          <h4 class="font-label-mono text-label-mono mb-sm uppercase">Currently Working</h4>
+          <p class="font-headline-sm text-headline-sm leading-tight">AI Training Specialist</p>
+          <p class="mt-xs text-body-sm opacity-80">Upwork · Remote · Apr 2026–Present</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROJECTS ───────────────────────────────────────── -->
+  <section id="work">
+    <div class="flex justify-between items-end mb-lg">
+      <div>
+        <h2 class="font-display-lg text-display-lg">Featured Projects</h2>
+        <p class="font-body-lg text-body-lg text-tertiary">Real-world applications of AI, NLP &amp; Robotics</p>
+      </div>
+      <a href="https://www.notion.so/Min-Kaung-ThantPortfolio-40a4d64b9e83837584ef81751d1cf5b5" target="_blank"
+        class="hidden md:flex items-center gap-xs font-label-mono text-label-mono text-primary border-b-2 border-primary pb-xs hover:gap-sm transition-all">
+        FULL PORTFOLIO <span class="material-symbols-outlined">north_east</span>
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+      <!-- Featured large card -->
+      <div class="md:col-span-8 group">
+        <div class="bg-white border border-outline-variant rounded-xl overflow-hidden h-full">
+          <div class="p-md">
+            <div class="flex gap-xs mb-sm">
+              <span class="px-sm py-xs bg-surface-container rounded-full text-[10px] font-label-mono font-bold">COMPUTER VISION</span>
+              <span class="px-sm py-xs bg-primary text-white rounded-full text-[10px] font-label-mono font-bold">XAI</span>
+            </div>
+            <p class="font-label-mono text-label-mono text-tertiary mb-xs">NIT Sendai, Japan · Research Internship · 2023</p>
+            <h3 class="font-headline-md text-headline-md mb-xs">XAI for Sign Language Recognition</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-md">
+              Applied Explainable AI techniques — LIME, SHAP, and Grad-CAM — to a sign language gesture recognition model.
+              Improved classification accuracy and surfaced interpretable visual explanations, making model decisions transparent and auditable.
+            </p>
+            <div class="flex flex-wrap gap-sm">
+              <span class="bg-surface-container px-sm py-xs rounded-lg text-body-sm font-label-mono">Python</span>
+              <span class="bg-surface-container px-sm py-xs rounded-lg text-body-sm font-label-mono">LIME / SHAP</span>
+              <span class="bg-surface-container px-sm py-xs rounded-lg text-body-sm font-label-mono">Grad-CAM</span>
+              <span class="bg-surface-container px-sm py-xs rounded-lg text-body-sm font-label-mono">Computer Vision</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Side cards -->
+      <div class="md:col-span-4 space-y-gutter">
+        <div class="bg-white border border-outline-variant rounded-xl p-md hover:border-primary transition-colors cursor-pointer group">
+          <div class="flex justify-between items-start mb-sm">
+            <span class="material-symbols-outlined text-primary text-4xl">keyboard_voice</span>
+            <span class="material-symbols-outlined text-tertiary group-hover:translate-x-1 transition-transform">north_east</span>
+          </div>
+          <p class="font-label-mono text-label-mono text-tertiary mb-xs">Upwork · Freelance</p>
+          <h4 class="font-headline-sm text-headline-sm mb-xs">NLP Audio QA Pipeline</h4>
+          <p class="text-body-sm text-on-surface-variant">Multi-stage quality assurance pipeline for multilingual &amp; dialectal speech datasets. Acoustic annotation, transcription validation, linguistic consistency checks.</p>
+        </div>
+
+        <div class="bg-white border border-outline-variant rounded-xl p-md hover:border-primary transition-colors cursor-pointer group">
+          <div class="flex justify-between items-start mb-sm">
+            <span class="material-symbols-outlined text-primary text-4xl">smart_toy</span>
+            <span class="material-symbols-outlined text-tertiary group-hover:translate-x-1 transition-transform">north_east</span>
+          </div>
+          <p class="font-label-mono text-label-mono text-tertiary mb-xs">KMITL · Academic Project</p>
+          <h4 class="font-headline-sm text-headline-sm mb-xs">Line-Following Robot</h4>
+          <p class="text-body-sm text-on-surface-variant">Autonomous robot built with microcontroller, IR sensor arrays &amp; PID control logic for smooth navigation on variable-complexity tracks.</p>
+        </div>
+
+        <div class="bg-white border border-outline-variant rounded-xl p-md hover:border-primary transition-colors cursor-pointer group">
+          <div class="flex justify-between items-start mb-sm">
+            <span class="material-symbols-outlined text-primary text-4xl">inventory_2</span>
+            <span class="material-symbols-outlined text-tertiary group-hover:translate-x-1 transition-transform">north_east</span>
+          </div>
+          <p class="font-label-mono text-label-mono text-tertiary mb-xs">KMITL · Institutional</p>
+          <h4 class="font-headline-sm text-headline-sm mb-xs">Inventory Management System</h4>
+          <p class="text-body-sm text-on-surface-variant">System serving 100+ users across KMITL departments. Structured validation workflows, documentation standards &amp; user support.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- More Projects Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mt-lg">
+
+      <div class="bg-white border border-outline-variant rounded-xl p-md hover:border-primary transition-colors cursor-pointer group">
+        <div class="flex justify-between items-start mb-sm">
+          <span class="material-symbols-outlined text-primary text-4xl">storefront</span>
+          <span class="material-symbols-outlined text-tertiary group-hover:translate-x-1 transition-transform">north_east</span>
+        </div>
+        <p class="font-label-mono text-label-mono text-tertiary mb-xs">Capstone · UI/UX</p>
+        <h4 class="font-headline-sm text-headline-sm mb-xs">RaiOne Capstone</h4>
+        <p class="text-body-sm text-on-surface-variant mb-sm">Built a web application to streamline equipment check-in/check-out processes, boosting efficiency and reducing manual errors for the Robotics & AI department.</p>
+        <div class="flex flex-wrap gap-xs">
+          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">UI/UX</span>
+          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">Figma</span>
+          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">React</span>
+        </div>
+      </div>
+
+      <div class="bg-white border border-outline-variant rounded-xl p-md hover:border-primary transition-colors cursor-pointer group">
+        <div class="flex justify-between items-start mb-sm">
+          <span class="material-symbols-outlined text-primary text-4xl">gesture</span>
+          <span class="material-symbols-outlined text-tertiary group-hover:translate-x-1 transition-transform">north_east</span>
+        </div>
+        <p class="font-label-mono text-label-mono text-tertiary mb-xs">HCI · Computer Vision</p>
+        <h4 class="font-headline-sm text-headline-sm mb-xs">HCI & Real-Time Interaction</h4>
+        <p class="text-body-sm text-on-surface-variant mb-sm">Interactive app that lets users play Rock Paper Scissors against an AI using real-time hand gesture recognition.</p>
+        <div class="flex flex-wrap gap-xs">
+          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">Python</span>
+          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">OpenCV</span>
+          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">MediaPipe</span>
+        </div>
+      </div>
+
+      <div class="bg-white border border-outline-variant rounded-xl p-md hover:border-primary transition-colors cursor-pointer group">
+        <div class="flex justify-between items-start mb-sm">
+          <span class="material-symbols-outlined text-primary text-4xl">bar_chart</span>
+          <span class="material-symbols-outlined text-tertiary group-hover:translate-x-1 transition-transform">north_east</span>
+        </div>
+        <p class="font-label-mono text-label-mono text-tertiary mb-xs">Business AI · LLM</p>
+        <h4 class="font-headline-sm text-headline-sm mb-xs">BuildMate Business ChatGPT Model</h4>
+        <p class="text-body-sm text-on-surface-variant mb-sm">Custom ChatGPT model to normalize and analyze KPIs (Sales, CLV, Demand Score), enabling smarter product categorization and promotion strategies.</p>
+        <div class="flex flex-wrap gap-xs">
+          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">ChatGPT</span>
+          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">LLM</span>
+          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">Excel</span>
+        </div>
+      </div>
+
+      <div class="bg-white border border-outline-variant rounded-xl p-md hover:border-primary transition-colors cursor-pointer group">
+        <div class="flex justify-between items-start mb-sm">
+          <span class="material-symbols-outlined text-primary text-4xl">delivery_dining</span>
+          <span class="material-symbols-outlined text-tertiary group-hover:translate-x-1 transition-transform">north_east</span>
+        </div>
+        <p class="font-label-mono text-label-mono text-tertiary mb-xs">Robotics · Embedded</p>
+        <h4 class="font-headline-sm text-headline-sm mb-xs">Mini Delivery Robot</h4>
+        <p class="text-body-sm text-on-surface-variant mb-sm">Autonomous robot for restaurant order delivery with real-time navigation, order interface, and dynamic obstacle avoidance.</p>
+        <div class="flex flex-wrap gap-xs">
+          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">SLAM</span>
+          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">Arduino</span>
+          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">Raspberry Pi</span>
+        </div>
+      </div>
+
+      <div class="bg-white border border-outline-variant rounded-xl p-md hover:border-primary transition-colors cursor-pointer group">
+        <div class="flex justify-between items-start mb-sm">
+          <span class="material-symbols-outlined text-primary text-4xl">eco</span>
+          <span class="material-symbols-outlined text-tertiary group-hover:translate-x-1 transition-transform">north_east</span>
+        </div>
+        <p class="font-label-mono text-label-mono text-tertiary mb-xs">IoT · Embedded</p>
+        <h4 class="font-headline-sm text-headline-sm mb-xs">Automatic Crop Grower</h4>
+        <p class="text-body-sm text-on-surface-variant mb-sm">Autonomous indoor farming system with real-time monitoring and control of water, light, and temperature for optimal crop growth.</p>
+        <div class="flex flex-wrap gap-xs">
+          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">Sensors</span>
+          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">Microcontrollers</span>
+          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">IoT</span>
+        </div>
+      </div>
+
+      <div class="bg-white border border-outline-variant rounded-xl p-md hover:border-primary transition-colors cursor-pointer group">
+        <div class="flex justify-between items-start mb-sm">
+          <span class="material-symbols-outlined text-primary text-4xl">precision_manufacturing</span>
+          <span class="material-symbols-outlined text-tertiary group-hover:translate-x-1 transition-transform">north_east</span>
+        </div>
+        <p class="font-label-mono text-label-mono text-tertiary mb-xs">Robotics · Control Systems</p>
+        <h4 class="font-headline-sm text-headline-sm mb-xs">5DOF Robot Arm</h4>
+        <p class="text-body-sm text-on-surface-variant mb-sm">Multi-DOF robotic arm with PID control and real-time motion logic for high-precision navigation in complex industrial workspaces.</p>
+        <div class="flex flex-wrap gap-xs">
+          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">STM32</span>
+          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">ROS</span>
+          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">MATLAB/Simulink</span>
+        </div>
+      </div>
+
+      <div class="bg-white border border-outline-variant rounded-xl p-md hover:border-primary transition-colors cursor-pointer group">
+        <div class="flex justify-between items-start mb-sm">
+          <span class="material-symbols-outlined text-primary text-4xl">videocam</span>
+          <span class="material-symbols-outlined text-tertiary group-hover:translate-x-1 transition-transform">north_east</span>
+        </div>
+        <p class="font-label-mono text-label-mono text-tertiary mb-xs">Computer Vision · AI</p>
+        <h4 class="font-headline-sm text-headline-sm mb-xs">Object Tracking Project</h4>
+        <p class="text-body-sm text-on-surface-variant mb-sm">AI-driven real-time surveillance system using YOLO and DeepSORT to enhance public safety through automated interaction monitoring and behavioral analysis.</p>
+        <div class="flex flex-wrap gap-xs">
+          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">OpenCV</span>
+          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">YOLO</span>
+          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">NumPy</span>
+        </div>
+      </div>
+
+      <div class="bg-white border border-outline-variant rounded-xl p-md hover:border-primary transition-colors cursor-pointer group">
+        <div class="flex justify-between items-start mb-sm">
+          <span class="material-symbols-outlined text-primary text-4xl">travel_explore</span>
+          <span class="material-symbols-outlined text-tertiary group-hover:translate-x-1 transition-transform">north_east</span>
+        </div>
+        <p class="font-label-mono text-label-mono text-tertiary mb-xs">NLP · Chatbot</p>
+        <h4 class="font-headline-sm text-headline-sm mb-xs">AI-Powered Travel Chatbot (Kahyee)</h4>
+        <p class="text-body-sm text-on-surface-variant mb-sm">Chatbot delivering personalized travel recommendations based on user preferences, increasing engagement and trip planning efficiency.</p>
+        <div class="flex flex-wrap gap-xs">
+          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">Dialogflow</span>
+          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">NLP</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── EXPERIENCE & EDUCATION ────────────────────────── -->
+  <section>
+    <h3 class="font-headline-md text-headline-md mb-lg flex items-center gap-sm">
+      <span class="material-symbols-outlined text-primary">history_edu</span> Experience &amp; Education
+    </h3>
+    <div class="relative pl-sm space-y-xl before:content-[''] before:absolute before:left-0 before:top-0 before:bottom-0 before:w-[2px] before:bg-surface-container-highest">
+
+      <div class="relative pl-md">
+        <div class="absolute left-[-11px] top-0 w-5 h-5 bg-primary rounded-full border-4 border-background"></div>
+        <span class="font-label-mono text-label-mono text-primary">APR 2026 – PRESENT</span>
+        <h4 class="font-body-lg text-body-lg font-bold">AI Training Specialist</h4>
+        <p class="text-tertiary text-body-sm">Upwork · Remote</p>
+        <p class="mt-xs text-on-surface-variant">Annotating and evaluating AI-generated outputs for NLP training datasets. Specializing in multilingual data quality, instruction-following assessment, and RLHF feedback.</p>
+      </div>
+
+      <div class="relative pl-md">
+        <div class="absolute left-[-11px] top-0 w-5 h-5 bg-tertiary rounded-full border-4 border-background"></div>
+        <span class="font-label-mono text-label-mono text-tertiary">JUN – JUL 2023</span>
+        <h4 class="font-body-lg text-body-lg font-bold">Research Intern</h4>
+        <p class="text-tertiary text-body-sm">National Institute of Technology · Sendai, Japan</p>
+        <p class="mt-xs text-on-surface-variant">Conducted XAI research on sign language recognition. Applied LIME, SHAP, and Grad-CAM to improve model transparency and classification accuracy.</p>
+      </div>
+
+      <div class="relative pl-md">
+        <div class="absolute left-[-11px] top-0 w-5 h-5 bg-tertiary rounded-full border-4 border-background"></div>
+        <span class="font-label-mono text-label-mono text-tertiary">DEC 2022 – SEP 2023</span>
+        <h4 class="font-body-lg text-body-lg font-bold">Teaching Assistant &amp; Inventory Assistant</h4>
+        <p class="text-tertiary text-body-sm">KMITL · Bangkok, Thailand</p>
+        <p class="mt-xs text-on-surface-variant">Assisted in robotics coursework delivery and managed institutional inventory for 100+ users across departments.</p>
+      </div>
+
+      <div class="relative pl-md">
+        <div class="absolute left-[-11px] top-0 w-5 h-5 bg-secondary rounded-full border-4 border-background"></div>
+        <span class="font-label-mono text-label-mono text-secondary">2021 – 2025</span>
+        <h4 class="font-body-lg text-body-lg font-bold">BE Robotics &amp; AI Engineering</h4>
+        <p class="text-tertiary text-body-sm">KMITL (King Mongkut's Institute of Technology Ladkrabang) · Bangkok</p>
+        <p class="mt-xs text-on-surface-variant">Four-year undergraduate program in robotics, embedded engineering, machine learning, and AI. Research projects in XAI and autonomous systems.</p>
+      </div>
+
+      <div class="relative pl-md">
+        <div class="absolute left-[-11px] top-0 w-5 h-5 bg-tertiary rounded-full border-4 border-background"></div>
+        <span class="font-label-mono text-label-mono text-tertiary">SUMMER 2025</span>
+        <h4 class="font-body-lg text-body-lg font-bold">Summer School Program</h4>
+        <p class="text-tertiary text-body-sm">Wuhan University · Wuhan, China</p>
+        <p class="mt-xs text-on-surface-variant">International academic exchange. Cross-cultural academic engagement and foundational Mandarin Chinese language immersion.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── CERTIFICATIONS ─────────────────────────────────── -->
+  <section id="certs">
+    <div class="flex justify-between items-end mb-lg">
+      <div>
+        <h2 class="font-display-lg text-display-lg">Certifications</h2>
+        <p class="font-body-lg text-body-lg text-tertiary">Verified credentials across AI, cloud &amp; language</p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+
+      <div class="bg-white border border-outline-variant rounded-xl overflow-hidden hover:border-primary hover:-translate-y-1 transition-all group cursor-pointer">
+        <div class="aspect-video overflow-hidden bg-surface-container-low">
+          <img src="certs/google-data-analytics.png" alt="Google Data Analytics" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"/>
+        </div>
+        <div class="p-sm">
+          <p class="font-label-mono text-label-mono text-primary uppercase mb-xs">Google · Coursera</p>
+          <p class="font-body-sm text-body-sm font-bold leading-snug">Google Data Analytics</p>
+          <p class="font-label-mono text-label-mono text-tertiary mt-xs">Mar 2023</p>
+        </div>
+      </div>
+
+      <div class="bg-white border border-outline-variant rounded-xl overflow-hidden hover:border-primary hover:-translate-y-1 transition-all group cursor-pointer">
+        <div class="aspect-video overflow-hidden bg-surface-container-low">
+          <img src="certs/machine-learning.png" alt="Machine Learning Specialization" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"/>
+        </div>
+        <div class="p-sm">
+          <p class="font-label-mono text-label-mono text-primary uppercase mb-xs">Stanford / DeepLearning.AI</p>
+          <p class="font-body-sm text-body-sm font-bold leading-snug">Machine Learning Specialization</p>
+          <p class="font-label-mono text-label-mono text-tertiary mt-xs">Mar 2026</p>
+        </div>
+      </div>
+
+      <div class="bg-white border border-outline-variant rounded-xl overflow-hidden hover:border-primary hover:-translate-y-1 transition-all group cursor-pointer">
+        <div class="aspect-video overflow-hidden bg-surface-container-low">
+          <img src="certs/google-ai.png" alt="Google AI Professional" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"/>
+        </div>
+        <div class="p-sm">
+          <p class="font-label-mono text-label-mono text-primary uppercase mb-xs">Google · Coursera</p>
+          <p class="font-body-sm text-body-sm font-bold leading-snug">Google AI Professional</p>
+          <p class="font-label-mono text-label-mono text-tertiary mt-xs">Apr 2026</p>
+        </div>
+      </div>
+
+      <div class="bg-white border border-outline-variant rounded-xl overflow-hidden hover:border-primary hover:-translate-y-1 transition-all group cursor-pointer">
+        <div class="aspect-video overflow-hidden bg-surface-container-low">
+          <img src="certs/ai-product-management.png" alt="AI Product Management" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"/>
+        </div>
+        <div class="p-sm">
+          <p class="font-label-mono text-label-mono text-primary uppercase mb-xs">Duke University · Coursera</p>
+          <p class="font-body-sm text-body-sm font-bold leading-snug">AI Product Management</p>
+          <p class="font-label-mono text-label-mono text-tertiary mt-xs">Apr 2026</p>
+        </div>
+      </div>
+
+      <div class="bg-white border border-outline-variant rounded-xl overflow-hidden hover:border-primary hover:-translate-y-1 transition-all group cursor-pointer">
+        <div class="aspect-video overflow-hidden bg-surface-container-low">
+          <img src="certs/fast-offer.jpg" alt="FAST OFFER Japanese Language" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"/>
+        </div>
+        <div class="p-sm">
+          <p class="font-label-mono text-label-mono text-primary uppercase mb-xs">Asia to Japan · JLC</p>
+          <p class="font-body-sm text-body-sm font-bold leading-snug">FAST OFFER Japanese Language N5N4</p>
+          <p class="font-label-mono text-label-mono text-tertiary mt-xs">Dec 2024</p>
+        </div>
+      </div>
+
+      <div class="bg-white border border-outline-variant rounded-xl overflow-hidden hover:border-primary hover:-translate-y-1 transition-all group cursor-pointer">
+        <div class="aspect-video overflow-hidden bg-surface-container-low">
+          <img src="certs/aws.jpg" alt="AWS Academy Cloud Foundations" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"/>
+        </div>
+        <div class="p-sm">
+          <p class="font-label-mono text-label-mono text-primary uppercase mb-xs">Amazon Web Services</p>
+          <p class="font-body-sm text-body-sm font-bold leading-snug">AWS Academy Cloud Foundations</p>
+          <p class="font-label-mono text-label-mono text-tertiary mt-xs">Nov 2022</p>
+        </div>
+      </div>
+
+      <div class="bg-white border border-outline-variant rounded-xl overflow-hidden hover:border-primary hover:-translate-y-1 transition-all group cursor-pointer">
+        <div class="aspect-video overflow-hidden bg-surface-container-low">
+          <img src="certs/chinese-hsk1.png" alt="Chinese for HSK 1" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"/>
+        </div>
+        <div class="p-sm">
+          <p class="font-label-mono text-label-mono text-primary uppercase mb-xs">Peking University · Coursera</p>
+          <p class="font-body-sm text-body-sm font-bold leading-snug">Chinese for HSK 1</p>
+          <p class="font-label-mono text-label-mono text-tertiary mt-xs">Mar 2026</p>
+        </div>
+      </div>
+
+      <!-- Stats card -->
+      <div class="bg-primary rounded-xl p-md text-on-primary flex flex-col justify-between">
+        <span class="material-symbols-outlined text-4xl opacity-80">workspace_premium</span>
+        <div>
+          <p class="font-display-lg text-on-primary" style="font-size:56px; line-height:1; font-weight:800;">7</p>
+          <p class="font-headline-sm text-on-primary mt-xs" style="font-size:16px;">Verified Certifications</p>
+          <p class="font-body-sm opacity-70 mt-xs">Across AI, Cloud, Language &amp; Data</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── CONTACT ───────────────────────────────── -->
+  <section>
+    <div class="bg-white p-lg border border-outline-variant rounded-xl h-fit" id="contact">
+      <h3 class="font-headline-md text-headline-md mb-md">Get In Touch</h3>
+      <p class="font-body-md text-body-md text-on-surface-variant mb-xl">
+        Open to full-time roles, research collaborations, and freelance opportunities in AI, NLP &amp; Robotics.
+      </p>
+      <form class="space-y-md" id="contactForm">
+        <div class="space-y-xs">
+          <label class="font-label-mono text-label-mono text-tertiary uppercase">Your Name</label>
+          <input class="w-full bg-surface border border-outline-variant rounded-lg p-sm focus:border-primary focus:ring-0 transition-all outline-none" placeholder="Your name" type="text"/>
+        </div>
+        <div class="space-y-xs">
+          <label class="font-label-mono text-label-mono text-tertiary uppercase">Email Address</label>
+          <input class="w-full bg-surface border border-outline-variant rounded-lg p-sm focus:border-primary focus:ring-0 transition-all outline-none" placeholder="your@email.com" type="email"/>
+        </div>
+        <div class="space-y-xs">
+          <label class="font-label-mono text-label-mono text-tertiary uppercase">Message</label>
+          <textarea class="w-full bg-surface border border-outline-variant rounded-lg p-sm focus:border-primary focus:ring-0 transition-all outline-none" placeholder="Tell me about your project..." rows="4"></textarea>
+        </div>
+        <button type="submit" class="w-full bg-primary text-on-primary py-sm rounded-lg font-bold hover:brightness-110 transition-all">
+          Send Message
+        </button>
+        <p class="font-label-mono text-label-mono text-secondary text-center" id="formNote"></p>
+      </form>
+
+      <div class="mt-xl pt-lg border-t border-surface-container space-y-sm">
+        <a href="mailto:treyvonmin@gmail.com" class="flex items-center gap-sm hover:text-primary transition-colors">
+          <span class="material-symbols-outlined text-primary">mail</span>
+          <span class="font-body-sm text-body-sm font-bold">treyvonmin@gmail.com</span>
+        </a>
+        <a href="tel:+66611125904" class="flex items-center gap-sm hover:text-primary transition-colors">
+          <span class="material-symbols-outlined text-primary">call</span>
+          <span class="font-body-sm text-body-sm font-bold">+66 61 112 5904</span>
+        </a>
+        <a href="https://linkedin.com/in/min-kaung-thant-1381a8217" target="_blank" class="flex items-center gap-sm hover:text-primary transition-colors">
+          <span class="material-symbols-outlined text-primary">link</span>
+          <span class="font-body-sm text-body-sm font-bold">linkedin.com/in/min-kaung-thant-1381a8217</span>
+        </a>
+        <a href="https://www.notion.so/Min-Kaung-ThantPortfolio-40a4d64b9e83837584ef81751d1cf5b5" target="_blank" class="flex items-center gap-sm hover:text-primary transition-colors">
+          <span class="material-symbols-outlined text-primary">article</span>
+          <span class="font-body-sm text-body-sm font-bold">Notion Portfolio →</span>
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- ── FOOTER ─────────────────────────────────────────── -->
+<footer class="w-full py-lg mt-xl bg-background border-t border-outline-variant">
+  <div class="flex flex-col md:flex-row justify-between items-center gap-md px-md max-w-container-max mx-auto">
+    <div>
+      <p class="font-label-mono text-label-mono font-black text-on-background">MIN KAUNG THANT</p>
+      <p class="font-body-sm text-body-sm text-tertiary mt-xs">© 2026 Min Kaung Thant · Robotics &amp; AI Engineer · Bangkok</p>
+    </div>
+    <div class="flex gap-md">
+      <a class="font-body-sm text-body-sm text-tertiary hover:text-primary transition-all underline underline-offset-4"
+        href="https://linkedin.com/in/min-kaung-thant-1381a8217" target="_blank">LinkedIn</a>
+      <a class="font-body-sm text-body-sm text-tertiary hover:text-primary transition-all underline underline-offset-4"
+        href="https://www.notion.so/Min-Kaung-ThantPortfolio-40a4d64b9e83837584ef81751d1cf5b5" target="_blank">Notion</a>
+      <a class="font-body-sm text-body-sm text-tertiary hover:text-primary transition-all underline underline-offset-4"
+        href="mailto:treyvonmin@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ── MOBILE BOTTOM NAV ──────────────────────────────── -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 rounded-t-xl bg-surface border-t border-outline-variant shadow-lg h-xl flex justify-around items-center px-sm">
+  <a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl p-xs" href="#">
+    <span class="material-symbols-outlined">home</span>
+    <span class="font-label-mono text-[10px]">Home</span>
+  </a>
+  <a class="flex flex-col items-center justify-center text-on-surface-variant p-xs" href="#work">
+    <span class="material-symbols-outlined">rocket_launch</span>
+    <span class="font-label-mono text-[10px]">Work</span>
+  </a>
+  <a class="flex flex-col items-center justify-center text-on-surface-variant p-xs" href="#certs">
+    <span class="material-symbols-outlined">workspace_premium</span>
+    <span class="font-label-mono text-[10px]">Certs</span>
+  </a>
+  <a class="flex flex-col items-center justify-center text-on-surface-variant p-xs" href="#about">
+    <span class="material-symbols-outlined">person_search</span>
+    <span class="font-label-mono text-[10px]">About</span>
+  </a>
+  <a class="flex flex-col items-center justify-center text-on-surface-variant p-xs" href="#contact">
+    <span class="material-symbols-outlined">alternate_email</span>
+    <span class="font-label-mono text-[10px]">Contact</span>
+  </a>
+</nav>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const note = document.getElementById('formNote');
+    note.textContent = '✓ Thanks! I\'ll be in touch soon.';
+    this.reset();
+    setTimeout(() => note.textContent = '', 4000);
+  });
+
+  // Mobile bottom nav active indicator
+  const mobileNavLinks = document.querySelectorAll('nav.md\\:hidden a');
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNavLinks.forEach(l => {
+        l.classList.remove('bg-primary-container', 'text-on-primary-container', 'rounded-xl');
+        l.classList.add('text-on-surface-variant');
+      });
+      link.classList.add('bg-primary-container', 'text-on-primary-container', 'rounded-xl');
+      link.classList.remove('text-on-surface-variant');
+    });
+  });
+</script>
+</body>
+</html>
