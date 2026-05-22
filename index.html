@@ -1,704 +1,803 @@
 <!DOCTYPE html>
-<html class="light" lang="en">
+<html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Min Kaung Thant | Robotics &amp; AI Engineer</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        "colors": {
-          "on-error": "#ffffff",
-          "tertiary": "#51535a",
-          "primary-container": "#2b59ff",
-          "on-background": "#191c1c",
-          "tertiary-fixed-dim": "#c5c6ce",
-          "inverse-primary": "#b9c3ff",
-          "surface-container-highest": "#e1e3e3",
-          "error": "#ba1a1a",
-          "on-secondary-fixed-variant": "#3c4d00",
-          "tertiary-fixed": "#e2e2ea",
-          "surface-container": "#edeeee",
-          "on-primary-container": "#ecedff",
-          "on-primary-fixed": "#001356",
-          "primary-fixed-dim": "#b9c3ff",
-          "on-surface-variant": "#434656",
-          "surface-variant": "#e1e3e3",
-          "tertiary-container": "#6a6b72",
-          "outline": "#747688",
-          "surface-container-lowest": "#ffffff",
-          "surface-container-low": "#f3f4f4",
-          "secondary-container": "#d0ef74",
-          "primary": "#003fdd",
-          "surface": "#f8f9f9",
-          "on-secondary-fixed": "#161e00",
-          "on-surface": "#191c1c",
-          "secondary-fixed": "#d0ef74",
-          "on-primary": "#ffffff",
-          "background": "#f8f9f9",
-          "on-tertiary": "#ffffff",
-          "outline-variant": "#c4c5d9",
-          "on-secondary-container": "#566c00",
-          "on-error-container": "#93000a",
-          "secondary": "#516600",
-          "on-primary-fixed-variant": "#0035be",
-          "surface-dim": "#d9dada",
-          "surface-bright": "#f8f9f9",
-          "on-tertiary-fixed-variant": "#45464d",
-          "inverse-surface": "#2e3131",
-          "inverse-on-surface": "#f0f1f1",
-          "surface-container-high": "#e7e8e8",
-          "primary-fixed": "#dde1ff",
-          "on-tertiary-container": "#ededf5",
-          "on-tertiary-fixed": "#191b21",
-          "error-container": "#ffdad6",
-          "on-secondary": "#ffffff",
-          "secondary-fixed-dim": "#b5d25b",
-          "surface-tint": "#1049f1"
-        },
-        "borderRadius": {
-          "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"
-        },
-        "spacing": {
-          "sm": "16px", "lg": "40px", "gutter": "24px", "base": "4px",
-          "md": "24px", "xs": "8px", "container-max": "1280px", "xl": "64px"
-        },
-        "fontFamily": {
-          "label-mono": ["IBM Plex Mono"], "body-lg": ["Inter"],
-          "headline-sm": ["Bricolage Grotesque"], "headline-md": ["Bricolage Grotesque"],
-          "body-md": ["Inter"], "body-sm": ["Inter"],
-          "display-lg": ["Bricolage Grotesque"], "display-xl": ["Bricolage Grotesque"]
-        },
-        "fontSize": {
-          "label-mono": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
-          "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-          "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
-          "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
-          "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-          "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
-          "display-lg": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-          "display-xl": ["84px", {"lineHeight": "92px", "letterSpacing": "-0.04em", "fontWeight": "800"}]
-        }
-      }
-    }
-  }
-</script>
+<title>Min Kaung Thant | Robotics & AI Engineer</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
-  .material-symbols-outlined {
-    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:       #E8E6E1;
+    --card:     #F3F1ED;
+    --card-dark:#1C1C1A;
+    --text:     #1C1C1A;
+    --muted:    #888884;
+    --green:    #3ECF6A;
+    --border:   rgba(0,0,0,0.08);
+    --blue:     #003FDD;
   }
-  .sticker-element { transform: rotate(-3deg); z-index: 10; }
-  .custom-scrollbar::-webkit-scrollbar { width: 4px; }
-  .custom-scrollbar::-webkit-scrollbar-thumb { background: #003fdd; border-radius: 10px; }
-  body { min-height: max(884px, 100dvh); }
-  /* cert scroll on mobile */
-  .cert-scroll { scrollbar-width: none; }
-  .cert-scroll::-webkit-scrollbar { display: none; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    min-height: 100dvh;
+  }
+  .serif { font-family: 'DM Serif Display', serif; }
+  .mono  { font-family: 'IBM Plex Mono', monospace; }
+  .card  { background: var(--card); border-radius: 20px; }
+  .card-dark { background: var(--card-dark); border-radius: 20px; color: #fff; }
+
+  /* scrollbar */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-thumb { background: var(--muted); border-radius: 6px; }
+
+  /* tag pill */
+  .tag { display: inline-flex; align-items: center; gap: 4px; padding: 4px 12px;
+         border-radius: 999px; font-size: 12px; font-weight: 500; font-family: 'IBM Plex Mono', monospace;
+         background: rgba(0,0,0,0.07); color: var(--text); }
+  .tag-blue { background: var(--blue); color: #fff; }
+
+  /* skill bar */
+  .skill-bar { height: 4px; border-radius: 4px; background: rgba(0,0,0,0.08); overflow: hidden; }
+  .skill-fill { height: 100%; border-radius: 4px; background: var(--blue); }
+
+  /* hover lift */
+  .lift { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+  .lift:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.10); }
+
+  /* cert image fallback */
+  .cert-img { object-fit: cover; object-position: top; }
+
+  /* project visual bg */
+  .proj-vis { border-radius: 14px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+
+  /* timeline dot */
+  .tl-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; margin-top: 6px; }
+
+  /* mobile bottom bar */
+  @media (max-width: 767px) {
+    body { padding-bottom: 72px; }
+  }
 </style>
 </head>
 
-<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<body>
 
-<!-- ── NAV ─────────────────────────────────────────────── -->
-<header class="w-full sticky top-0 z-50 bg-background border-b border-outline-variant">
-  <div class="flex justify-between items-center px-md py-sm max-w-container-max mx-auto">
-    <div class="flex items-center gap-xs">
-      <span class="material-symbols-outlined text-primary" style="font-variation-settings:'FILL' 1;">smart_toy</span>
-      <span class="font-headline-sm text-headline-sm font-bold text-on-background" style="font-size:17px;">trey.</span>
+<!-- ══════════════════════════════════════════════
+     NAV
+══════════════════════════════════════════════ -->
+<header style="position:sticky;top:0;z-index:50;background:var(--bg);backdrop-filter:blur(12px);">
+  <div style="max-width:860px;margin:0 auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;">
+
+    <!-- Logo -->
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div style="width:28px;height:28px;border-radius:50%;background:var(--card-dark);display:flex;align-items:center;justify-content:center;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>
+        </svg>
+      </div>
+      <span style="font-weight:600;font-size:15px;">trey.</span>
     </div>
-    <nav class="hidden md:flex gap-md items-center">
-      <a class="text-primary font-bold transition-colors" href="#">Home</a>
-      <a class="text-on-surface-variant hover:text-primary transition-colors" href="#work">Work</a>
-      <a class="text-on-surface-variant hover:text-primary transition-colors" href="#about">About</a>
-      <a class="text-on-surface-variant hover:text-primary transition-colors" href="#certs">Certs</a>
-      <a class="text-on-surface-variant hover:text-primary transition-colors" href="#contact">Contact</a>
+
+    <!-- Center: dot + Available -->
+    <div style="display:flex;align-items:center;gap:8px;">
+      <div style="width:6px;height:6px;border-radius:50%;background:var(--muted);"></div>
+      <div style="display:flex;align-items:center;gap:6px;">
+        <div style="width:7px;height:7px;border-radius:50%;background:var(--green);"></div>
+        <span style="font-size:13px;font-weight:500;color:var(--text);">Available</span>
+      </div>
+    </div>
+
+    <!-- Menu / links -->
+    <nav style="display:flex;align-items:center;gap:20px;">
+      <div class="hidden md:flex" style="gap:20px;">
+        <a href="#work" style="font-size:14px;color:var(--muted);text-decoration:none;font-weight:500;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--muted)'">Work</a>
+        <a href="#about" style="font-size:14px;color:var(--muted);text-decoration:none;font-weight:500;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--muted)'">About</a>
+        <a href="#certs" style="font-size:14px;color:var(--muted);text-decoration:none;font-weight:500;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--muted)'">Certs</a>
+        <a href="#contact" style="font-size:14px;color:var(--muted);text-decoration:none;font-weight:500;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--muted)'">Contact</a>
+      </div>
+      <a href="mailto:treyvonmin@gmail.com"
+         style="background:var(--card-dark);color:#fff;border-radius:999px;padding:8px 18px;font-size:13px;font-weight:500;text-decoration:none;">
+        Hire Me
+      </a>
     </nav>
-    <a href="mailto:treyvonmin@gmail.com" class="bg-primary text-on-primary px-md py-xs rounded-lg font-label-mono text-label-mono active:scale-95 transition-transform duration-150">
-      Hire Me
-    </a>
   </div>
 </header>
 
-<main class="max-w-container-max mx-auto px-md pt-lg pb-xl space-y-xl">
 
-  <!-- ── HERO ──────────────────────────────────────────── -->
-  <section class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center min-h-[618px]">
-    <div class="md:col-span-7 space-y-md">
-      <div class="inline-flex items-center gap-xs px-sm py-xs bg-secondary-container text-on-secondary-container rounded-full font-label-mono text-label-mono sticker-element w-fit">
-        <span class="material-symbols-outlined text-[16px]">bolt</span>
-        Available for opportunities · Bangkok, Thailand
+<!-- ══════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════ -->
+<main style="max-width:860px;margin:0 auto;padding:0 20px 80px;">
+
+  <section style="padding:32px 0 48px;">
+    <!-- Hero Card -->
+    <div class="card" style="padding:40px 36px 36px;">
+
+      <!-- Profile row -->
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:32px;">
+        <div style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#003FDD,#7B9FFF);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;color:#fff;">
+          M
+        </div>
+        <div>
+          <p style="font-weight:600;font-size:15px;">Min Kaung Thant</p>
+          <p style="color:var(--muted);font-size:13px;">Robotics &amp; AI Engineer</p>
+        </div>
       </div>
-      <h2 class="font-display-xl text-display-xl tracking-tight leading-none">
-        Min Kaung <span class="text-primary">Thant</span>
-      </h2>
-      <div class="space-y-sm">
-        <p class="font-headline-sm text-headline-sm text-tertiary" style="font-size:18px;">
-          Robotics &amp; AI Engineer &nbsp;/&nbsp; NLP Specialist &nbsp;/&nbsp; Solution Engineer
-        </p>
-        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
-          Building intelligent systems at the intersection of AI, language, and human experience.
-          KMITL graduate with XAI research experience at NIT Sendai, Japan.
-        </p>
-      </div>
-      <div class="flex flex-wrap gap-sm pt-md">
-        <a href="#work" class="bg-primary text-on-primary px-xl py-sm rounded-lg font-bold hover:brightness-110 transition-all flex items-center gap-xs">
-          View My Work <span class="material-symbols-outlined">arrow_forward</span>
+
+      <!-- Headline -->
+      <h1 class="serif" style="font-size:clamp(36px,6vw,54px);line-height:1.12;margin-bottom:18px;max-width:520px;">
+        Intelligent Systems,<br><em>Human-Centered.</em>
+      </h1>
+
+      <!-- Sub -->
+      <p style="color:var(--muted);font-size:15px;max-width:460px;line-height:1.7;margin-bottom:32px;">
+        Building AI at the intersection of robotics, language & human experience.
+        KMITL graduate with XAI research at NIT Sendai, Japan.
+      </p>
+
+      <!-- CTAs -->
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <a href="#work"
+           style="display:inline-flex;align-items:center;gap:8px;background:var(--card-dark);color:#fff;border-radius:999px;padding:12px 24px;font-size:14px;font-weight:500;text-decoration:none;">
+          View Work
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-        <a href="https://linkedin.com/in/min-kaung-thant-1381a8217" target="_blank" class="border-[1.5px] border-tertiary text-tertiary px-xl py-sm rounded-lg font-bold hover:bg-surface-container transition-all">
+        <a href="https://linkedin.com/in/min-kaung-thant-1381a8217" target="_blank"
+           style="display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--text);border:1.5px solid rgba(0,0,0,0.15);border-radius:999px;padding:12px 24px;font-size:14px;font-weight:500;text-decoration:none;">
           LinkedIn
         </a>
       </div>
     </div>
 
-    <div class="md:col-span-5 relative">
-      <div class="bg-primary aspect-square rounded-xl overflow-hidden shadow-2xl relative rotate-2">
-        <img alt="Futuristic AI Robotics" class="w-full h-full object-cover opacity-80 mix-blend-multiply"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDh3kweTy-xw7jSsWn_147T7ko3dbPpXKumlumwfUz6VvytD1OgUBUfY3wKyImx19aYAMvEhO8UHb7XVFZNAPM8Ol83jgyKyzC8W3MyLQxzr8JEbnInlZu-tN8498oyYYpANaGLmKzbScCAufMetY58IfDeoJtSZ6nOPK1jco4XL3AS-KWjkD6NctLp2Ev3H4YUPPlEddtWuhymAgC3BQGVKjUUsP-PHDOec-yLcnrR1ZyvPTeRihSXzJtTaLYqXEDKiQj2Ueu4PH8"/>
-        <div class="absolute inset-0 flex items-center justify-center">
-          <span class="font-display-xl text-white text-[120px] opacity-20">2026</span>
-        </div>
+    <!-- Stats strip -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px;">
+      <div class="card" style="padding:20px;text-align:center;">
+        <p class="serif" style="font-size:32px;">11+</p>
+        <p style="font-size:12px;color:var(--muted);margin-top:2px;">Projects</p>
       </div>
-      <div class="absolute -bottom-xs -left-xs bg-white p-md border border-outline-variant rounded-xl shadow-lg sticker-element max-w-[210px]">
-        <p class="font-label-mono text-label-mono text-primary uppercase mb-xs">Expertise</p>
-        <p class="font-body-sm text-body-sm font-bold">XAI · NLP · Robotics · Embedded AI</p>
+      <div class="card" style="padding:20px;text-align:center;">
+        <p class="serif" style="font-size:32px;">4+</p>
+        <p style="font-size:12px;color:var(--muted);margin-top:2px;">Yrs Experience</p>
+      </div>
+      <div class="card" style="padding:20px;text-align:center;">
+        <p class="serif" style="font-size:32px;">4</p>
+        <p style="font-size:12px;color:var(--muted);margin-top:2px;">Languages</p>
       </div>
     </div>
-  </section>
 
-  <!-- ── ABOUT ─────────────────────────────────────────── -->
-  <section class="grid grid-cols-1 md:grid-cols-3 gap-gutter" id="about">
-    <div class="md:col-span-1 bg-white p-md border border-outline-variant rounded-xl flex flex-col justify-between">
-      <div>
-        <h3 class="font-headline-sm text-headline-sm mb-md flex items-center gap-xs">
-          <span class="material-symbols-outlined text-primary">person</span> Introduction
-        </h3>
-        <p class="font-body-md text-body-md text-on-surface-variant">
-          Robotics &amp; AI Engineering graduate from <strong class="text-on-surface">KMITL, Bangkok</strong>.
-          I conducted XAI research at <strong class="text-on-surface">NIT Sendai, Japan</strong> and
-          work as an NLP &amp; audio annotation specialist. I believe AI should be transparent,
-          inclusive, and human-centered.
+    <!-- Testimonial card -->
+    <div class="card" style="margin-top:12px;padding:24px 28px;display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;">
+      <div style="width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,#E8E6E1,#C8C6C1);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:18px;">🤖</div>
+      <div style="flex:1;min-width:200px;">
+        <p style="font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:10px;">
+          "Min's XAI research surfaced insights our team had missed entirely. Transparent, rigorous, and deeply thoughtful work."
         </p>
-      </div>
-      <div class="mt-xl space-y-sm">
-        <div class="flex justify-between items-center py-xs border-b border-surface-container">
-          <span class="font-label-mono text-label-mono text-tertiary">Location</span>
-          <span class="font-body-sm text-body-sm font-bold">Bangkok, Thailand</span>
-        </div>
-        <div class="flex justify-between items-center py-xs border-b border-surface-container">
-          <span class="font-label-mono text-label-mono text-tertiary">Languages</span>
-          <span class="font-body-sm text-body-sm font-bold">EN · MY · JA · ZH</span>
-        </div>
-      </div>
-      <div class="mt-md grid grid-cols-2 gap-sm">
-        <div class="bg-surface-container-low rounded-xl p-sm flex flex-col gap-xs">
-          <span class="font-label-mono text-label-mono text-tertiary">Experience</span>
-          <span class="font-body-sm text-body-sm font-bold">4+ Years</span>
-        </div>
-        <div class="bg-surface-container-low rounded-xl p-sm flex flex-col gap-xs">
-          <span class="font-label-mono text-label-mono text-tertiary">Education</span>
-          <span class="font-body-sm text-body-sm font-bold">BE Robotics &amp; AI, KMITL</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div style="width:26px;height:26px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700;">N</div>
+          <span style="font-size:13px;font-weight:500;">NIT Sendai Lab</span>
+          <span style="font-size:12px;color:var(--muted);">· Research Supervisor</span>
         </div>
       </div>
     </div>
 
-    <div class="md:col-span-2 space-y-gutter">
-      <div class="bg-white p-md border border-outline-variant rounded-xl">
-        <h3 class="font-headline-sm text-headline-sm mb-md">Core Skills</h3>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-sm">
-          <div class="p-sm bg-surface-container-low rounded-lg border border-transparent hover:border-primary transition-all">
-            <div class="flex items-center gap-xs mb-xs">
-              <span class="material-symbols-outlined text-primary" style="font-variation-settings:'FILL' 1;">psychology</span>
-              <h4 class="font-body-md text-body-md font-bold">AI &amp; ML</h4>
-            </div>
-            <p class="text-body-sm text-on-surface-variant">NLP, XAI, Computer Vision, LIME, SHAP, Grad-CAM, Data Annotation, Audio Processing.</p>
-          </div>
-          <div class="p-sm bg-surface-container-low rounded-lg border border-transparent hover:border-primary transition-all">
-            <div class="flex items-center gap-xs mb-xs">
-              <span class="material-symbols-outlined text-primary" style="font-variation-settings:'FILL' 1;">precision_manufacturing</span>
-              <h4 class="font-body-md text-body-md font-bold">Robotics</h4>
-            </div>
-            <p class="text-body-sm text-on-surface-variant">ROS, Microcontrollers, Sensor Integration, Embedded C, PID Control, Line-following.</p>
-          </div>
-          <div class="p-sm bg-surface-container-low rounded-lg border border-transparent hover:border-primary transition-all">
-            <div class="flex items-center gap-xs mb-xs">
-              <span class="material-symbols-outlined text-primary" style="font-variation-settings:'FILL' 1;">terminal</span>
-              <h4 class="font-body-md text-body-md font-bold">Tools</h4>
-            </div>
-            <p class="text-body-sm text-on-surface-variant">Python, AWS, Git, Jupyter, Linux, Google Data Analytics, Notion.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-gutter">
-        <div class="bg-secondary-container p-md rounded-xl text-on-secondary-container relative overflow-hidden">
-          <span class="material-symbols-outlined absolute -bottom-xl -right-xl text-[120px] opacity-10">military_tech</span>
-          <h4 class="font-label-mono text-label-mono mb-sm uppercase">Recent Certification</h4>
-          <p class="font-headline-sm text-headline-sm leading-tight">Google AI Professional Certificate</p>
-          <p class="mt-xs text-body-sm opacity-80">Google · Coursera · Apr 2026</p>
-        </div>
-        <div class="bg-primary p-md rounded-xl text-on-primary relative overflow-hidden">
-          <span class="material-symbols-outlined absolute -bottom-xl -right-xl text-[120px] opacity-10">code</span>
-          <h4 class="font-label-mono text-label-mono mb-sm uppercase">Currently Working</h4>
-          <p class="font-headline-sm text-headline-sm leading-tight">AI Training Specialist</p>
-          <p class="mt-xs text-body-sm opacity-80">Upwork · Remote · Apr 2026–Present</p>
-        </div>
-      </div>
+    <!-- Skills tags -->
+    <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+      <span class="tag">XAI</span>
+      <span class="tag">NLP</span>
+      <span class="tag">Computer Vision</span>
+      <span class="tag">ROS</span>
+      <span class="tag">Python</span>
+      <span class="tag">AWS</span>
+      <span class="tag">Embedded C</span>
+      <span class="tag">SLAM</span>
     </div>
   </section>
 
-  <!-- ── PROJECTS ───────────────────────────────────────── -->
-  <section id="work">
-    <div class="flex justify-between items-end mb-lg">
-      <div>
-        <h2 class="font-display-lg text-display-lg">Featured Projects</h2>
-        <p class="font-body-lg text-body-lg text-tertiary">Real-world applications of AI, NLP &amp; Robotics</p>
-      </div>
-      <a href="https://www.notion.so/Min-Kaung-ThantPortfolio-40a4d64b9e83837584ef81751d1cf5b5" target="_blank"
-        class="hidden md:flex items-center gap-xs font-label-mono text-label-mono text-primary border-b-2 border-primary pb-xs hover:gap-sm transition-all">
-        FULL PORTFOLIO <span class="material-symbols-outlined">north_east</span>
-      </a>
+
+  <!-- ══════════════════════════════════════════════
+       WORK
+  ══════════════════════════════════════════════ -->
+  <section id="work" style="padding:8px 0 48px;">
+
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:10px;">
+      <h2 class="serif" style="font-size:clamp(28px,5vw,40px);">Work</h2>
+      <p style="color:var(--muted);font-size:13px;">Real-world applications of AI, NLP &amp; Robotics</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
 
-      <div class="bg-white border border-outline-variant rounded-xl p-md hover:border-primary transition-colors cursor-pointer group">
-        <div class="flex justify-between items-start mb-sm">
-          <span class="material-symbols-outlined text-primary text-4xl">sign_language</span>
-          <span class="material-symbols-outlined text-tertiary group-hover:translate-x-1 transition-transform">north_east</span>
+      <!-- 1 -->
+      <div class="card lift" style="padding:24px;display:flex;flex-direction:column;gap:0;">
+        <div style="width:44px;height:44px;border-radius:12px;background:var(--card-dark);display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
         </div>
-        <p class="font-label-mono text-label-mono text-tertiary mb-xs">NIT Sendai · Research Internship · 2023</p>
-        <h4 class="font-headline-sm text-headline-sm mb-xs">XAI for Sign Language Recognition</h4>
-        <p class="text-body-sm text-on-surface-variant mb-sm">Applied LIME, SHAP, and Grad-CAM to a sign language gesture recognition model. Surfaced interpretable visual explanations making model decisions transparent.</p>
-        <div class="flex flex-wrap gap-xs">
-          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">Python</span>
-          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">LIME / SHAP</span>
-          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">Grad-CAM</span>
+        <span class="tag" style="display:inline-flex;margin-bottom:12px;font-size:11px;">NIT Sendai · 2023</span>
+        <h4 class="serif" style="font-size:18px;line-height:1.3;margin-bottom:8px;">XAI for Sign Language Recognition</h4>
+        <p style="font-size:13px;color:var(--muted);line-height:1.65;flex:1;margin-bottom:16px;">Applied LIME, SHAP &amp; Grad-CAM to a gesture recognition model. Made AI decisions transparent and auditable.</p>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;">
+          <span class="tag" style="font-size:11px;">Python</span>
+          <span class="tag" style="font-size:11px;">LIME/SHAP</span>
+          <span class="tag" style="font-size:11px;">Grad-CAM</span>
         </div>
       </div>
 
-      <div class="bg-white border border-outline-variant rounded-xl p-md hover:border-primary transition-colors cursor-pointer group">
-        <div class="flex justify-between items-start mb-sm">
-          <span class="material-symbols-outlined text-primary text-4xl">keyboard_voice</span>
-          <span class="material-symbols-outlined text-tertiary group-hover:translate-x-1 transition-transform">north_east</span>
+      <!-- 2 -->
+      <div class="card lift" style="padding:24px;display:flex;flex-direction:column;">
+        <div style="width:44px;height:44px;border-radius:12px;background:var(--card-dark);display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
         </div>
-        <p class="font-label-mono text-label-mono text-tertiary mb-xs">Upwork · Freelance</p>
-        <h4 class="font-headline-sm text-headline-sm mb-xs">NLP Audio QA Pipeline</h4>
-        <p class="text-body-sm text-on-surface-variant">Multi-stage quality assurance pipeline for multilingual &amp; dialectal speech datasets. Acoustic annotation, transcription validation, linguistic consistency checks.</p>
-      </div>
-
-      <div class="bg-white border border-outline-variant rounded-xl p-md hover:border-primary transition-colors cursor-pointer group">
-        <div class="flex justify-between items-start mb-sm">
-          <span class="material-symbols-outlined text-primary text-4xl">smart_toy</span>
-          <span class="material-symbols-outlined text-tertiary group-hover:translate-x-1 transition-transform">north_east</span>
-        </div>
-        <p class="font-label-mono text-label-mono text-tertiary mb-xs">KMITL · Academic Project</p>
-        <h4 class="font-headline-sm text-headline-sm mb-xs">Line-Following Robot</h4>
-        <p class="text-body-sm text-on-surface-variant">Autonomous robot built with microcontroller, IR sensor arrays &amp; PID control logic for smooth navigation on variable-complexity tracks.</p>
-      </div>
-
-      <div class="bg-white border border-outline-variant rounded-xl p-md hover:border-primary transition-colors cursor-pointer group">
-        <div class="flex justify-between items-start mb-sm">
-          <span class="material-symbols-outlined text-primary text-4xl">inventory_2</span>
-          <span class="material-symbols-outlined text-tertiary group-hover:translate-x-1 transition-transform">north_east</span>
-        </div>
-        <p class="font-label-mono text-label-mono text-tertiary mb-xs">KMITL · Institutional</p>
-        <h4 class="font-headline-sm text-headline-sm mb-xs">Inventory Management System</h4>
-        <p class="text-body-sm text-on-surface-variant">System serving 100+ users across KMITL departments. Structured validation workflows, documentation standards &amp; user support.</p>
-      </div>
-    </div>
-
-    <!-- More Projects Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mt-lg">
-
-      <div class="bg-white border border-outline-variant rounded-xl p-md hover:border-primary transition-colors cursor-pointer group">
-        <div class="flex justify-between items-start mb-sm">
-          <span class="material-symbols-outlined text-primary text-4xl">storefront</span>
-          <span class="material-symbols-outlined text-tertiary group-hover:translate-x-1 transition-transform">north_east</span>
-        </div>
-        <p class="font-label-mono text-label-mono text-tertiary mb-xs">Capstone · UI/UX</p>
-        <h4 class="font-headline-sm text-headline-sm mb-xs">RaiOne Capstone</h4>
-        <p class="text-body-sm text-on-surface-variant mb-sm">Built a web application to streamline equipment check-in/check-out processes, boosting efficiency and reducing manual errors for the Robotics & AI department.</p>
-        <div class="flex flex-wrap gap-xs">
-          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">UI/UX</span>
-          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">Figma</span>
-          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">React</span>
+        <span class="tag" style="display:inline-flex;margin-bottom:12px;font-size:11px;">Upwork · Freelance</span>
+        <h4 class="serif" style="font-size:18px;line-height:1.3;margin-bottom:8px;">NLP Audio QA Pipeline</h4>
+        <p style="font-size:13px;color:var(--muted);line-height:1.65;flex:1;margin-bottom:16px;">Multi-stage quality assurance for multilingual &amp; dialectal speech datasets. Transcription validation &amp; annotation.</p>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;">
+          <span class="tag" style="font-size:11px;">Python</span>
+          <span class="tag" style="font-size:11px;">NLP</span>
+          <span class="tag" style="font-size:11px;">Audio</span>
         </div>
       </div>
 
-      <div class="bg-white border border-outline-variant rounded-xl p-md hover:border-primary transition-colors cursor-pointer group">
-        <div class="flex justify-between items-start mb-sm">
-          <span class="material-symbols-outlined text-primary text-4xl">gesture</span>
-          <span class="material-symbols-outlined text-tertiary group-hover:translate-x-1 transition-transform">north_east</span>
+      <!-- 3 -->
+      <div class="card lift" style="padding:24px;display:flex;flex-direction:column;">
+        <div style="width:44px;height:44px;border-radius:12px;background:var(--card-dark);display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/><path d="M3 15h-1M22 15h-1"/></svg>
         </div>
-        <p class="font-label-mono text-label-mono text-tertiary mb-xs">HCI · Computer Vision</p>
-        <h4 class="font-headline-sm text-headline-sm mb-xs">HCI & Real-Time Interaction</h4>
-        <p class="text-body-sm text-on-surface-variant mb-sm">Interactive app that lets users play Rock Paper Scissors against an AI using real-time hand gesture recognition.</p>
-        <div class="flex flex-wrap gap-xs">
-          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">Python</span>
-          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">OpenCV</span>
-          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">MediaPipe</span>
-        </div>
-      </div>
-
-      <div class="bg-white border border-outline-variant rounded-xl p-md hover:border-primary transition-colors cursor-pointer group">
-        <div class="flex justify-between items-start mb-sm">
-          <span class="material-symbols-outlined text-primary text-4xl">bar_chart</span>
-          <span class="material-symbols-outlined text-tertiary group-hover:translate-x-1 transition-transform">north_east</span>
-        </div>
-        <p class="font-label-mono text-label-mono text-tertiary mb-xs">Business AI · LLM</p>
-        <h4 class="font-headline-sm text-headline-sm mb-xs">BuildMate Business ChatGPT Model</h4>
-        <p class="text-body-sm text-on-surface-variant mb-sm">Custom ChatGPT model to normalize and analyze KPIs (Sales, CLV, Demand Score), enabling smarter product categorization and promotion strategies.</p>
-        <div class="flex flex-wrap gap-xs">
-          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">ChatGPT</span>
-          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">LLM</span>
-          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">Excel</span>
+        <span class="tag" style="display:inline-flex;margin-bottom:12px;font-size:11px;">KMITL · Academic</span>
+        <h4 class="serif" style="font-size:18px;line-height:1.3;margin-bottom:8px;">Line-Following Robot</h4>
+        <p style="font-size:13px;color:var(--muted);line-height:1.65;flex:1;margin-bottom:16px;">Autonomous robot with IR sensor arrays &amp; PID control for smooth navigation on variable-complexity tracks.</p>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;">
+          <span class="tag" style="font-size:11px;">C++</span>
+          <span class="tag" style="font-size:11px;">PID</span>
+          <span class="tag" style="font-size:11px;">Microcontroller</span>
         </div>
       </div>
 
-      <div class="bg-white border border-outline-variant rounded-xl p-md hover:border-primary transition-colors cursor-pointer group">
-        <div class="flex justify-between items-start mb-sm">
-          <span class="material-symbols-outlined text-primary text-4xl">delivery_dining</span>
-          <span class="material-symbols-outlined text-tertiary group-hover:translate-x-1 transition-transform">north_east</span>
+      <!-- 4 -->
+      <div class="card lift" style="padding:24px;display:flex;flex-direction:column;">
+        <div style="width:44px;height:44px;border-radius:12px;background:var(--card-dark);display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
         </div>
-        <p class="font-label-mono text-label-mono text-tertiary mb-xs">Robotics · Embedded</p>
-        <h4 class="font-headline-sm text-headline-sm mb-xs">Mini Delivery Robot</h4>
-        <p class="text-body-sm text-on-surface-variant mb-sm">Autonomous robot for restaurant order delivery with real-time navigation, order interface, and dynamic obstacle avoidance.</p>
-        <div class="flex flex-wrap gap-xs">
-          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">SLAM</span>
-          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">Arduino</span>
-          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">Raspberry Pi</span>
-        </div>
-      </div>
-
-      <div class="bg-white border border-outline-variant rounded-xl p-md hover:border-primary transition-colors cursor-pointer group">
-        <div class="flex justify-between items-start mb-sm">
-          <span class="material-symbols-outlined text-primary text-4xl">eco</span>
-          <span class="material-symbols-outlined text-tertiary group-hover:translate-x-1 transition-transform">north_east</span>
-        </div>
-        <p class="font-label-mono text-label-mono text-tertiary mb-xs">IoT · Embedded</p>
-        <h4 class="font-headline-sm text-headline-sm mb-xs">Automatic Crop Grower</h4>
-        <p class="text-body-sm text-on-surface-variant mb-sm">Autonomous indoor farming system with real-time monitoring and control of water, light, and temperature for optimal crop growth.</p>
-        <div class="flex flex-wrap gap-xs">
-          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">Sensors</span>
-          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">Microcontrollers</span>
-          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">IoT</span>
+        <span class="tag" style="display:inline-flex;margin-bottom:12px;font-size:11px;">KMITL · Institutional</span>
+        <h4 class="serif" style="font-size:18px;line-height:1.3;margin-bottom:8px;">Inventory Management System</h4>
+        <p style="font-size:13px;color:var(--muted);line-height:1.65;flex:1;margin-bottom:16px;">Serving 100+ users across KMITL departments with structured validation workflows &amp; user support.</p>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;">
+          <span class="tag" style="font-size:11px;">Web</span>
+          <span class="tag" style="font-size:11px;">Database</span>
         </div>
       </div>
 
-      <div class="bg-white border border-outline-variant rounded-xl p-md hover:border-primary transition-colors cursor-pointer group">
-        <div class="flex justify-between items-start mb-sm">
-          <span class="material-symbols-outlined text-primary text-4xl">precision_manufacturing</span>
-          <span class="material-symbols-outlined text-tertiary group-hover:translate-x-1 transition-transform">north_east</span>
+      <!-- 5 -->
+      <div class="card lift" style="padding:24px;display:flex;flex-direction:column;">
+        <div style="width:44px;height:44px;border-radius:12px;background:var(--card-dark);display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><polyline points="7 8 12 13 17 8"/></svg>
         </div>
-        <p class="font-label-mono text-label-mono text-tertiary mb-xs">Robotics · Control Systems</p>
-        <h4 class="font-headline-sm text-headline-sm mb-xs">5DOF Robot Arm</h4>
-        <p class="text-body-sm text-on-surface-variant mb-sm">Multi-DOF robotic arm with PID control and real-time motion logic for high-precision navigation in complex industrial workspaces.</p>
-        <div class="flex flex-wrap gap-xs">
-          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">STM32</span>
-          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">ROS</span>
-          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">MATLAB/Simulink</span>
-        </div>
-      </div>
-
-      <div class="bg-white border border-outline-variant rounded-xl p-md hover:border-primary transition-colors cursor-pointer group">
-        <div class="flex justify-between items-start mb-sm">
-          <span class="material-symbols-outlined text-primary text-4xl">videocam</span>
-          <span class="material-symbols-outlined text-tertiary group-hover:translate-x-1 transition-transform">north_east</span>
-        </div>
-        <p class="font-label-mono text-label-mono text-tertiary mb-xs">Computer Vision · AI</p>
-        <h4 class="font-headline-sm text-headline-sm mb-xs">Object Tracking Project</h4>
-        <p class="text-body-sm text-on-surface-variant mb-sm">AI-driven real-time surveillance system using YOLO and DeepSORT to enhance public safety through automated interaction monitoring and behavioral analysis.</p>
-        <div class="flex flex-wrap gap-xs">
-          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">OpenCV</span>
-          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">YOLO</span>
-          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">NumPy</span>
+        <span class="tag" style="display:inline-flex;margin-bottom:12px;font-size:11px;">Capstone · UI/UX</span>
+        <h4 class="serif" style="font-size:18px;line-height:1.3;margin-bottom:8px;">RaiOne Capstone</h4>
+        <p style="font-size:13px;color:var(--muted);line-height:1.65;flex:1;margin-bottom:16px;">Equipment check-in/out web app for the Robotics &amp; AI dept. Reduced manual errors &amp; boosted efficiency.</p>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;">
+          <span class="tag" style="font-size:11px;">Figma</span>
+          <span class="tag" style="font-size:11px;">React</span>
+          <span class="tag" style="font-size:11px;">UI/UX</span>
         </div>
       </div>
 
-      <div class="bg-white border border-outline-variant rounded-xl p-md hover:border-primary transition-colors cursor-pointer group">
-        <div class="flex justify-between items-start mb-sm">
-          <span class="material-symbols-outlined text-primary text-4xl">travel_explore</span>
-          <span class="material-symbols-outlined text-tertiary group-hover:translate-x-1 transition-transform">north_east</span>
+      <!-- 6 -->
+      <div class="card lift" style="padding:24px;display:flex;flex-direction:column;">
+        <div style="width:44px;height:44px;border-radius:12px;background:var(--card-dark);display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 00-2-2 2 2 0 00-2 2"/><path d="M14 10V4a2 2 0 00-2-2 2 2 0 00-2 2v2"/><path d="M10 10.5V6a2 2 0 00-2-2 2 2 0 00-2 2v8"/><path d="M18 8a2 2 0 114 0v6a8 8 0 01-8 8H8a8 8 0 01-8-8v-1a2 2 0 012-2h.5"/></svg>
         </div>
-        <p class="font-label-mono text-label-mono text-tertiary mb-xs">NLP · Chatbot</p>
-        <h4 class="font-headline-sm text-headline-sm mb-xs">AI-Powered Travel Chatbot (Kahyee)</h4>
-        <p class="text-body-sm text-on-surface-variant mb-sm">Chatbot delivering personalized travel recommendations based on user preferences, increasing engagement and trip planning efficiency.</p>
-        <div class="flex flex-wrap gap-xs">
-          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">Dialogflow</span>
-          <span class="bg-surface-container px-sm py-xs rounded-lg text-[11px] font-label-mono">NLP</span>
+        <span class="tag" style="display:inline-flex;margin-bottom:12px;font-size:11px;">HCI · Computer Vision</span>
+        <h4 class="serif" style="font-size:18px;line-height:1.3;margin-bottom:8px;">HCI Real-Time Interaction</h4>
+        <p style="font-size:13px;color:var(--muted);line-height:1.65;flex:1;margin-bottom:16px;">Rock Paper Scissors vs AI via real-time hand gesture recognition using OpenCV &amp; MediaPipe.</p>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;">
+          <span class="tag" style="font-size:11px;">Python</span>
+          <span class="tag" style="font-size:11px;">OpenCV</span>
+          <span class="tag" style="font-size:11px;">MediaPipe</span>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="card lift" style="padding:24px;display:flex;flex-direction:column;">
+        <div style="width:44px;height:44px;border-radius:12px;background:var(--card-dark);display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+        </div>
+        <span class="tag" style="display:inline-flex;margin-bottom:12px;font-size:11px;">Business AI · LLM</span>
+        <h4 class="serif" style="font-size:18px;line-height:1.3;margin-bottom:8px;">BuildMate ChatGPT Model</h4>
+        <p style="font-size:13px;color:var(--muted);line-height:1.65;flex:1;margin-bottom:16px;">Custom GPT model to normalize KPIs (Sales, CLV, Demand Score) for smarter product categorization.</p>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;">
+          <span class="tag" style="font-size:11px;">ChatGPT</span>
+          <span class="tag" style="font-size:11px;">LLM</span>
+          <span class="tag" style="font-size:11px;">Excel</span>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="card lift" style="padding:24px;display:flex;flex-direction:column;">
+        <div style="width:44px;height:44px;border-radius:12px;background:var(--card-dark);display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <span class="tag" style="display:inline-flex;margin-bottom:12px;font-size:11px;">Robotics · Embedded</span>
+        <h4 class="serif" style="font-size:18px;line-height:1.3;margin-bottom:8px;">Mini Delivery Robot</h4>
+        <p style="font-size:13px;color:var(--muted);line-height:1.65;flex:1;margin-bottom:16px;">Autonomous delivery bot with SLAM navigation, real-time obstacle avoidance &amp; order interface.</p>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;">
+          <span class="tag" style="font-size:11px;">SLAM</span>
+          <span class="tag" style="font-size:11px;">Arduino</span>
+          <span class="tag" style="font-size:11px;">Raspberry Pi</span>
+        </div>
+      </div>
+
+      <!-- 9 -->
+      <div class="card lift" style="padding:24px;display:flex;flex-direction:column;">
+        <div style="width:44px;height:44px;border-radius:12px;background:var(--card-dark);display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M12 12C12 7 7 3 2 3c0 5 4 9 10 9z"/><path d="M12 12c0-5 5-9 10-9-1 5-5 9-10 9z"/></svg>
+        </div>
+        <span class="tag" style="display:inline-flex;margin-bottom:12px;font-size:11px;">IoT · Embedded</span>
+        <h4 class="serif" style="font-size:18px;line-height:1.3;margin-bottom:8px;">Automatic Crop Grower</h4>
+        <p style="font-size:13px;color:var(--muted);line-height:1.65;flex:1;margin-bottom:16px;">Indoor farming system with real-time monitoring &amp; control of water, light &amp; temperature via IoT sensors.</p>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;">
+          <span class="tag" style="font-size:11px;">Sensors</span>
+          <span class="tag" style="font-size:11px;">IoT</span>
+          <span class="tag" style="font-size:11px;">Microcontrollers</span>
+        </div>
+      </div>
+
+      <!-- 10 -->
+      <div class="card lift" style="padding:24px;display:flex;flex-direction:column;">
+        <div style="width:44px;height:44px;border-radius:12px;background:var(--card-dark);display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/><path d="M15 5l3 3"/></svg>
+        </div>
+        <span class="tag" style="display:inline-flex;margin-bottom:12px;font-size:11px;">Robotics · Control</span>
+        <h4 class="serif" style="font-size:18px;line-height:1.3;margin-bottom:8px;">5DOF Robot Arm</h4>
+        <p style="font-size:13px;color:var(--muted);line-height:1.65;flex:1;margin-bottom:16px;">Multi-DOF robotic arm with PID control &amp; real-time motion logic for industrial precision. STM32 + ROS.</p>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;">
+          <span class="tag" style="font-size:11px;">STM32</span>
+          <span class="tag" style="font-size:11px;">ROS</span>
+          <span class="tag" style="font-size:11px;">MATLAB</span>
+        </div>
+      </div>
+
+      <!-- 11 -->
+      <div class="card lift" style="padding:24px;display:flex;flex-direction:column;">
+        <div style="width:44px;height:44px;border-radius:12px;background:var(--card-dark);display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <span class="tag" style="display:inline-flex;margin-bottom:12px;font-size:11px;">Computer Vision · AI</span>
+        <h4 class="serif" style="font-size:18px;line-height:1.3;margin-bottom:8px;">Object Tracking System</h4>
+        <p style="font-size:13px;color:var(--muted);line-height:1.65;flex:1;margin-bottom:16px;">Real-time surveillance using YOLO &amp; DeepSORT for automated behavioral analysis &amp; public safety.</p>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;">
+          <span class="tag" style="font-size:11px;">YOLO</span>
+          <span class="tag" style="font-size:11px;">OpenCV</span>
+          <span class="tag" style="font-size:11px;">NumPy</span>
+        </div>
+      </div>
+
+      <!-- 12 -->
+      <div class="card lift" style="padding:24px;display:flex;flex-direction:column;">
+        <div style="width:44px;height:44px;border-radius:12px;background:var(--card-dark);display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <span class="tag" style="display:inline-flex;margin-bottom:12px;font-size:11px;">NLP · Chatbot</span>
+        <h4 class="serif" style="font-size:18px;line-height:1.3;margin-bottom:8px;">Kahyee Travel Chatbot</h4>
+        <p style="font-size:13px;color:var(--muted);line-height:1.65;flex:1;margin-bottom:16px;">AI chatbot delivering personalized travel recommendations based on user preferences via Dialogflow &amp; NLP.</p>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;">
+          <span class="tag" style="font-size:11px;">Dialogflow</span>
+          <span class="tag" style="font-size:11px;">NLP</span>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- ── EXPERIENCE & EDUCATION ────────────────────────── -->
-  <section>
-    <h3 class="font-headline-md text-headline-md mb-lg flex items-center gap-sm">
-      <span class="material-symbols-outlined text-primary">history_edu</span> Experience &amp; Education
-    </h3>
-    <div class="relative pl-sm space-y-xl before:content-[''] before:absolute before:left-0 before:top-0 before:bottom-0 before:w-[2px] before:bg-surface-container-highest">
 
-      <div class="relative pl-md">
-        <div class="absolute left-[-11px] top-0 w-5 h-5 bg-primary rounded-full border-4 border-background"></div>
-        <span class="font-label-mono text-label-mono text-primary">APR 2026 – PRESENT</span>
-        <h4 class="font-body-lg text-body-lg font-bold">AI Training Specialist</h4>
-        <p class="text-tertiary text-body-sm">Upwork · Remote</p>
-        <p class="mt-xs text-on-surface-variant">Annotating and evaluating AI-generated outputs for NLP training datasets. Specializing in multilingual data quality, instruction-following assessment, and RLHF feedback.</p>
+  <!-- ══════════════════════════════════════════════
+       ABOUT
+  ══════════════════════════════════════════════ -->
+  <section id="about" style="padding:8px 0 48px;">
+    <h2 class="serif" style="font-size:clamp(28px,5vw,40px);margin-bottom:20px;">About</h2>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;flex-wrap:wrap;">
+
+      <!-- Bio card -->
+      <div class="card" style="padding:28px;grid-column:1/-1;">
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start;">
+          <div style="width:72px;height:72px;border-radius:18px;background:linear-gradient(135deg,#003FDD,#7B9FFF);display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700;color:#fff;flex-shrink:0;">M</div>
+          <div>
+            <h3 class="serif" style="font-size:20px;margin-bottom:6px;">Min Kaung Thant</h3>
+            <p style="color:var(--muted);font-size:13px;margin-bottom:14px;">Robotics &amp; AI Engineering · KMITL · Bangkok, Thailand</p>
+            <p style="font-size:14px;line-height:1.7;color:var(--text);">
+              I'm a Robotics &amp; AI Engineering graduate from KMITL who conducted XAI research at NIT Sendai, Japan.
+              I work as an NLP &amp; audio annotation specialist and build systems that are transparent, inclusive, and human-centered.
+              Fluent in English, Burmese, Japanese &amp; Chinese.
+            </p>
+          </div>
+        </div>
       </div>
 
-      <div class="relative pl-md">
-        <div class="absolute left-[-11px] top-0 w-5 h-5 bg-tertiary rounded-full border-4 border-background"></div>
-        <span class="font-label-mono text-label-mono text-tertiary">JUN – JUL 2023</span>
-        <h4 class="font-body-lg text-body-lg font-bold">Research Intern</h4>
-        <p class="text-tertiary text-body-sm">National Institute of Technology · Sendai, Japan</p>
-        <p class="mt-xs text-on-surface-variant">Conducted XAI research on sign language recognition. Applied LIME, SHAP, and Grad-CAM to improve model transparency and classification accuracy.</p>
+      <!-- Info -->
+      <div class="card" style="padding:24px;">
+        <p style="font-size:11px;color:var(--muted);font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:16px;">Details</p>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:1px solid var(--border);">
+            <span style="font-size:13px;color:var(--muted);">Location</span>
+            <span style="font-size:13px;font-weight:500;">Bangkok, Thailand</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:1px solid var(--border);">
+            <span style="font-size:13px;color:var(--muted);">Education</span>
+            <span style="font-size:13px;font-weight:500;">BE Robotics &amp; AI, KMITL</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:1px solid var(--border);">
+            <span style="font-size:13px;color:var(--muted);">Languages</span>
+            <span style="font-size:13px;font-weight:500;">EN · MY · JA · ZH</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-size:13px;color:var(--muted);">Status</span>
+            <div style="display:flex;align-items:center;gap:6px;">
+              <div style="width:6px;height:6px;border-radius:50%;background:var(--green);"></div>
+              <span style="font-size:13px;font-weight:500;">Open to Work</span>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="relative pl-md">
-        <div class="absolute left-[-11px] top-0 w-5 h-5 bg-tertiary rounded-full border-4 border-background"></div>
-        <span class="font-label-mono text-label-mono text-tertiary">DEC 2022 – SEP 2023</span>
-        <h4 class="font-body-lg text-body-lg font-bold">Teaching Assistant &amp; Inventory Assistant</h4>
-        <p class="text-tertiary text-body-sm">KMITL · Bangkok, Thailand</p>
-        <p class="mt-xs text-on-surface-variant">Assisted in robotics coursework delivery and managed institutional inventory for 100+ users across departments.</p>
+      <!-- Skills -->
+      <div class="card" style="padding:24px;">
+        <p style="font-size:11px;color:var(--muted);font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:16px;">Core Skills</p>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+              <span style="font-size:13px;">AI &amp; Machine Learning</span>
+              <span style="font-size:12px;color:var(--muted);">90%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" style="width:90%;"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+              <span style="font-size:13px;">NLP &amp; Audio Processing</span>
+              <span style="font-size:12px;color:var(--muted);">85%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" style="width:85%;"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+              <span style="font-size:13px;">Robotics &amp; Embedded</span>
+              <span style="font-size:12px;color:var(--muted);">80%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" style="width:80%;"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+              <span style="font-size:13px;">Computer Vision</span>
+              <span style="font-size:12px;color:var(--muted);">75%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" style="width:75%;"></div></div>
+          </div>
+        </div>
       </div>
 
-      <div class="relative pl-md">
-        <div class="absolute left-[-11px] top-0 w-5 h-5 bg-secondary rounded-full border-4 border-background"></div>
-        <span class="font-label-mono text-label-mono text-secondary">2021 – 2025</span>
-        <h4 class="font-body-lg text-body-lg font-bold">BE Robotics &amp; AI Engineering</h4>
-        <p class="text-tertiary text-body-sm">KMITL (King Mongkut's Institute of Technology Ladkrabang) · Bangkok</p>
-        <p class="mt-xs text-on-surface-variant">Four-year undergraduate program in robotics, embedded engineering, machine learning, and AI. Research projects in XAI and autonomous systems.</p>
+      <!-- Currently -->
+      <div class="card-dark" style="padding:24px;grid-column:1/-1;">
+        <p style="font-size:11px;color:rgba(255,255,255,0.4);font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:14px;">Currently</p>
+        <h4 class="serif" style="font-size:20px;color:#fff;margin-bottom:6px;">AI Training Specialist</h4>
+        <p style="font-size:13px;color:rgba(255,255,255,0.55);">Upwork · Remote · Apr 2026 – Present</p>
+        <p style="font-size:13px;color:rgba(255,255,255,0.65);margin-top:12px;line-height:1.65;">Annotating &amp; evaluating AI-generated outputs for NLP training datasets. Multilingual quality, instruction-following &amp; RLHF feedback.</p>
       </div>
+    </div>
 
-      <div class="relative pl-md">
-        <div class="absolute left-[-11px] top-0 w-5 h-5 bg-tertiary rounded-full border-4 border-background"></div>
-        <span class="font-label-mono text-label-mono text-tertiary">SUMMER 2025</span>
-        <h4 class="font-body-lg text-body-lg font-bold">Summer School Program</h4>
-        <p class="text-tertiary text-body-sm">Wuhan University · Wuhan, China</p>
-        <p class="mt-xs text-on-surface-variant">International academic exchange. Cross-cultural academic engagement and foundational Mandarin Chinese language immersion.</p>
+    <!-- Experience timeline -->
+    <div class="card" style="margin-top:12px;padding:28px;">
+      <p style="font-size:11px;color:var(--muted);font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:20px;">Experience &amp; Education</p>
+
+      <div style="display:flex;flex-direction:column;gap:0;">
+
+        <div style="display:flex;gap:16px;padding-bottom:24px;border-left:2px solid var(--border);margin-left:5px;padding-left:20px;position:relative;">
+          <div style="position:absolute;left:-6px;top:0;width:10px;height:10px;border-radius:50%;background:var(--blue);border:2px solid var(--bg);"></div>
+          <div>
+            <span class="mono" style="font-size:10px;color:var(--blue);">APR 2026 – PRESENT</span>
+            <h5 style="font-size:14px;font-weight:600;margin:4px 0 2px;">AI Training Specialist</h5>
+            <p style="font-size:12px;color:var(--muted);">Upwork · Remote</p>
+            <p style="font-size:13px;color:var(--muted);margin-top:6px;line-height:1.6;">Multilingual data annotation, RLHF feedback, instruction-following evaluation for NLP training datasets.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:16px;padding-bottom:24px;border-left:2px solid var(--border);margin-left:5px;padding-left:20px;position:relative;">
+          <div style="position:absolute;left:-6px;top:0;width:10px;height:10px;border-radius:50%;background:var(--muted);border:2px solid var(--bg);"></div>
+          <div>
+            <span class="mono" style="font-size:10px;color:var(--muted);">JUN – JUL 2023</span>
+            <h5 style="font-size:14px;font-weight:600;margin:4px 0 2px;">Research Intern</h5>
+            <p style="font-size:12px;color:var(--muted);">NIT Sendai · Japan</p>
+            <p style="font-size:13px;color:var(--muted);margin-top:6px;line-height:1.6;">XAI research on sign language recognition. LIME, SHAP &amp; Grad-CAM for model transparency.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:16px;padding-bottom:24px;border-left:2px solid var(--border);margin-left:5px;padding-left:20px;position:relative;">
+          <div style="position:absolute;left:-6px;top:0;width:10px;height:10px;border-radius:50%;background:var(--muted);border:2px solid var(--bg);"></div>
+          <div>
+            <span class="mono" style="font-size:10px;color:var(--muted);">DEC 2022 – SEP 2023</span>
+            <h5 style="font-size:14px;font-weight:600;margin:4px 0 2px;">Teaching Assistant &amp; Inventory Assistant</h5>
+            <p style="font-size:12px;color:var(--muted);">KMITL · Bangkok</p>
+            <p style="font-size:13px;color:var(--muted);margin-top:6px;line-height:1.6;">Assisted robotics coursework &amp; managed institutional inventory for 100+ users.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:16px;padding-bottom:24px;border-left:2px solid var(--border);margin-left:5px;padding-left:20px;position:relative;">
+          <div style="position:absolute;left:-6px;top:0;width:10px;height:10px;border-radius:50%;background:#516600;border:2px solid var(--bg);"></div>
+          <div>
+            <span class="mono" style="font-size:10px;color:#516600;">2021 – 2025</span>
+            <h5 style="font-size:14px;font-weight:600;margin:4px 0 2px;">BE Robotics &amp; AI Engineering</h5>
+            <p style="font-size:12px;color:var(--muted);">KMITL · Bangkok, Thailand</p>
+            <p style="font-size:13px;color:var(--muted);margin-top:6px;line-height:1.6;">Robotics, embedded engineering, machine learning &amp; AI. Research in XAI and autonomous systems.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:16px;margin-left:5px;padding-left:20px;position:relative;">
+          <div style="position:absolute;left:-6px;top:0;width:10px;height:10px;border-radius:50%;background:var(--muted);border:2px solid var(--bg);"></div>
+          <div>
+            <span class="mono" style="font-size:10px;color:var(--muted);">SUMMER 2025</span>
+            <h5 style="font-size:14px;font-weight:600;margin:4px 0 2px;">Summer School Program</h5>
+            <p style="font-size:12px;color:var(--muted);">Wuhan University · China</p>
+            <p style="font-size:13px;color:var(--muted);margin-top:6px;line-height:1.6;">International academic exchange &amp; Mandarin Chinese immersion.</p>
+          </div>
+        </div>
+
       </div>
-
     </div>
   </section>
 
-  <!-- ── CERTIFICATIONS ─────────────────────────────────── -->
-  <section id="certs">
-    <div class="flex justify-between items-end mb-lg">
-      <div>
-        <h2 class="font-display-lg text-display-lg">Certifications</h2>
-        <p class="font-body-lg text-body-lg text-tertiary">Verified credentials across AI, cloud &amp; language</p>
-      </div>
+
+  <!-- ══════════════════════════════════════════════
+       CERTIFICATIONS
+  ══════════════════════════════════════════════ -->
+  <section id="certs" style="padding:8px 0 48px;">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:10px;">
+      <h2 class="serif" style="font-size:clamp(28px,5vw,40px);">Certifications</h2>
+      <p style="color:var(--muted);font-size:13px;">Verified across AI, Cloud &amp; Language</p>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;">
 
-      <div class="bg-white border border-outline-variant rounded-xl overflow-hidden hover:border-primary hover:-translate-y-1 transition-all group cursor-pointer">
-        <div class="aspect-video overflow-hidden bg-surface-container-low">
-          <img src="certs/google-data-analytics.png" alt="Google Data Analytics" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"/>
+      <div class="card lift" style="overflow:hidden;cursor:pointer;">
+        <div style="aspect-ratio:16/9;overflow:hidden;background:#e8e6e1;">
+          <img src="certs/google-data-analytics.png" alt="Google Data Analytics" class="cert-img" style="width:100%;height:100%;"/>
         </div>
-        <div class="p-sm">
-          <p class="font-label-mono text-label-mono text-primary uppercase mb-xs">Google · Coursera</p>
-          <p class="font-body-sm text-body-sm font-bold leading-snug">Google Data Analytics</p>
-          <p class="font-label-mono text-label-mono text-tertiary mt-xs">Mar 2023</p>
+        <div style="padding:14px 16px;">
+          <p class="mono" style="font-size:10px;color:var(--blue);margin-bottom:4px;">Google · Coursera</p>
+          <p style="font-size:13px;font-weight:600;line-height:1.3;">Google Data Analytics</p>
+          <p class="mono" style="font-size:10px;color:var(--muted);margin-top:4px;">Mar 2023</p>
         </div>
       </div>
 
-      <div class="bg-white border border-outline-variant rounded-xl overflow-hidden hover:border-primary hover:-translate-y-1 transition-all group cursor-pointer">
-        <div class="aspect-video overflow-hidden bg-surface-container-low">
-          <img src="certs/machine-learning.png" alt="Machine Learning Specialization" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"/>
+      <div class="card lift" style="overflow:hidden;cursor:pointer;">
+        <div style="aspect-ratio:16/9;overflow:hidden;background:#e8e6e1;">
+          <img src="certs/machine-learning.png" alt="Machine Learning" class="cert-img" style="width:100%;height:100%;"/>
         </div>
-        <div class="p-sm">
-          <p class="font-label-mono text-label-mono text-primary uppercase mb-xs">Stanford / DeepLearning.AI</p>
-          <p class="font-body-sm text-body-sm font-bold leading-snug">Machine Learning Specialization</p>
-          <p class="font-label-mono text-label-mono text-tertiary mt-xs">Mar 2026</p>
-        </div>
-      </div>
-
-      <div class="bg-white border border-outline-variant rounded-xl overflow-hidden hover:border-primary hover:-translate-y-1 transition-all group cursor-pointer">
-        <div class="aspect-video overflow-hidden bg-surface-container-low">
-          <img src="certs/google-ai.png" alt="Google AI Professional" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"/>
-        </div>
-        <div class="p-sm">
-          <p class="font-label-mono text-label-mono text-primary uppercase mb-xs">Google · Coursera</p>
-          <p class="font-body-sm text-body-sm font-bold leading-snug">Google AI Professional</p>
-          <p class="font-label-mono text-label-mono text-tertiary mt-xs">Apr 2026</p>
+        <div style="padding:14px 16px;">
+          <p class="mono" style="font-size:10px;color:var(--blue);margin-bottom:4px;">Stanford / DeepLearning.AI</p>
+          <p style="font-size:13px;font-weight:600;line-height:1.3;">Machine Learning Specialization</p>
+          <p class="mono" style="font-size:10px;color:var(--muted);margin-top:4px;">Mar 2026</p>
         </div>
       </div>
 
-      <div class="bg-white border border-outline-variant rounded-xl overflow-hidden hover:border-primary hover:-translate-y-1 transition-all group cursor-pointer">
-        <div class="aspect-video overflow-hidden bg-surface-container-low">
-          <img src="certs/ai-product-management.png" alt="AI Product Management" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"/>
+      <div class="card lift" style="overflow:hidden;cursor:pointer;">
+        <div style="aspect-ratio:16/9;overflow:hidden;background:#e8e6e1;">
+          <img src="certs/google-ai.png" alt="Google AI" class="cert-img" style="width:100%;height:100%;"/>
         </div>
-        <div class="p-sm">
-          <p class="font-label-mono text-label-mono text-primary uppercase mb-xs">Duke University · Coursera</p>
-          <p class="font-body-sm text-body-sm font-bold leading-snug">AI Product Management</p>
-          <p class="font-label-mono text-label-mono text-tertiary mt-xs">Apr 2026</p>
-        </div>
-      </div>
-
-      <div class="bg-white border border-outline-variant rounded-xl overflow-hidden hover:border-primary hover:-translate-y-1 transition-all group cursor-pointer">
-        <div class="aspect-video overflow-hidden bg-surface-container-low">
-          <img src="certs/fast-offer.jpg" alt="FAST OFFER Japanese Language" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"/>
-        </div>
-        <div class="p-sm">
-          <p class="font-label-mono text-label-mono text-primary uppercase mb-xs">Asia to Japan · JLC</p>
-          <p class="font-body-sm text-body-sm font-bold leading-snug">FAST OFFER Japanese Language N5N4</p>
-          <p class="font-label-mono text-label-mono text-tertiary mt-xs">Dec 2024</p>
+        <div style="padding:14px 16px;">
+          <p class="mono" style="font-size:10px;color:var(--blue);margin-bottom:4px;">Google · Coursera</p>
+          <p style="font-size:13px;font-weight:600;line-height:1.3;">Google AI Professional</p>
+          <p class="mono" style="font-size:10px;color:var(--muted);margin-top:4px;">Apr 2026</p>
         </div>
       </div>
 
-      <div class="bg-white border border-outline-variant rounded-xl overflow-hidden hover:border-primary hover:-translate-y-1 transition-all group cursor-pointer">
-        <div class="aspect-video overflow-hidden bg-surface-container-low">
-          <img src="certs/aws.jpg" alt="AWS Academy Cloud Foundations" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"/>
+      <div class="card lift" style="overflow:hidden;cursor:pointer;">
+        <div style="aspect-ratio:16/9;overflow:hidden;background:#e8e6e1;">
+          <img src="certs/ai-product-management.png" alt="AI Product Management" class="cert-img" style="width:100%;height:100%;"/>
         </div>
-        <div class="p-sm">
-          <p class="font-label-mono text-label-mono text-primary uppercase mb-xs">Amazon Web Services</p>
-          <p class="font-body-sm text-body-sm font-bold leading-snug">AWS Academy Cloud Foundations</p>
-          <p class="font-label-mono text-label-mono text-tertiary mt-xs">Nov 2022</p>
+        <div style="padding:14px 16px;">
+          <p class="mono" style="font-size:10px;color:var(--blue);margin-bottom:4px;">Duke University</p>
+          <p style="font-size:13px;font-weight:600;line-height:1.3;">AI Product Management</p>
+          <p class="mono" style="font-size:10px;color:var(--muted);margin-top:4px;">Apr 2026</p>
         </div>
       </div>
 
-      <div class="bg-white border border-outline-variant rounded-xl overflow-hidden hover:border-primary hover:-translate-y-1 transition-all group cursor-pointer">
-        <div class="aspect-video overflow-hidden bg-surface-container-low">
-          <img src="certs/chinese-hsk1.png" alt="Chinese for HSK 1" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"/>
+      <div class="card lift" style="overflow:hidden;cursor:pointer;">
+        <div style="aspect-ratio:16/9;overflow:hidden;background:#e8e6e1;">
+          <img src="certs/fast-offer.jpg" alt="Japanese Language" class="cert-img" style="width:100%;height:100%;"/>
         </div>
-        <div class="p-sm">
-          <p class="font-label-mono text-label-mono text-primary uppercase mb-xs">Peking University · Coursera</p>
-          <p class="font-body-sm text-body-sm font-bold leading-snug">Chinese for HSK 1</p>
-          <p class="font-label-mono text-label-mono text-tertiary mt-xs">Mar 2026</p>
+        <div style="padding:14px 16px;">
+          <p class="mono" style="font-size:10px;color:var(--blue);margin-bottom:4px;">Asia to Japan · JLC</p>
+          <p style="font-size:13px;font-weight:600;line-height:1.3;">FAST OFFER Japanese N5N4</p>
+          <p class="mono" style="font-size:10px;color:var(--muted);margin-top:4px;">Dec 2024</p>
+        </div>
+      </div>
+
+      <div class="card lift" style="overflow:hidden;cursor:pointer;">
+        <div style="aspect-ratio:16/9;overflow:hidden;background:#e8e6e1;">
+          <img src="certs/aws.jpg" alt="AWS" class="cert-img" style="width:100%;height:100%;"/>
+        </div>
+        <div style="padding:14px 16px;">
+          <p class="mono" style="font-size:10px;color:var(--blue);margin-bottom:4px;">Amazon Web Services</p>
+          <p style="font-size:13px;font-weight:600;line-height:1.3;">AWS Academy Cloud Foundations</p>
+          <p class="mono" style="font-size:10px;color:var(--muted);margin-top:4px;">Nov 2022</p>
+        </div>
+      </div>
+
+      <div class="card lift" style="overflow:hidden;cursor:pointer;">
+        <div style="aspect-ratio:16/9;overflow:hidden;background:#e8e6e1;">
+          <img src="certs/chinese-hsk1.png" alt="Chinese HSK" class="cert-img" style="width:100%;height:100%;"/>
+        </div>
+        <div style="padding:14px 16px;">
+          <p class="mono" style="font-size:10px;color:var(--blue);margin-bottom:4px;">Peking University · Coursera</p>
+          <p style="font-size:13px;font-weight:600;line-height:1.3;">Chinese for HSK 1</p>
+          <p class="mono" style="font-size:10px;color:var(--muted);margin-top:4px;">Mar 2026</p>
         </div>
       </div>
 
       <!-- Stats card -->
-      <div class="bg-primary rounded-xl p-md text-on-primary flex flex-col justify-between">
-        <span class="material-symbols-outlined text-4xl opacity-80">workspace_premium</span>
+      <div class="card-dark" style="padding:24px;display:flex;flex-direction:column;justify-content:space-between;">
+        <span style="font-size:28px;">🏆</span>
         <div>
-          <p class="font-display-lg text-on-primary" style="font-size:56px; line-height:1; font-weight:800;">7</p>
-          <p class="font-headline-sm text-on-primary mt-xs" style="font-size:16px;">Verified Certifications</p>
-          <p class="font-body-sm opacity-70 mt-xs">Across AI, Cloud, Language &amp; Data</p>
+          <p class="serif" style="font-size:48px;color:#fff;line-height:1;">7</p>
+          <p style="font-size:14px;color:#fff;font-weight:600;margin-top:4px;">Certified</p>
+          <p style="font-size:12px;color:rgba(255,255,255,0.45);margin-top:4px;">AI · Cloud · Language · Data</p>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- ── CONTACT ───────────────────────────────── -->
-  <section>
-    <div class="bg-white p-lg border border-outline-variant rounded-xl h-fit" id="contact">
-      <h3 class="font-headline-md text-headline-md mb-md">Get In Touch</h3>
-      <p class="font-body-md text-body-md text-on-surface-variant mb-xl">
-        Open to full-time roles, research collaborations, and freelance opportunities in AI, NLP &amp; Robotics.
-      </p>
-      <form class="space-y-md" id="contactForm">
-        <div class="space-y-xs">
-          <label class="font-label-mono text-label-mono text-tertiary uppercase">Your Name</label>
-          <input class="w-full bg-surface border border-outline-variant rounded-lg p-sm focus:border-primary focus:ring-0 transition-all outline-none" placeholder="Your name" type="text"/>
-        </div>
-        <div class="space-y-xs">
-          <label class="font-label-mono text-label-mono text-tertiary uppercase">Email Address</label>
-          <input class="w-full bg-surface border border-outline-variant rounded-lg p-sm focus:border-primary focus:ring-0 transition-all outline-none" placeholder="your@email.com" type="email"/>
-        </div>
-        <div class="space-y-xs">
-          <label class="font-label-mono text-label-mono text-tertiary uppercase">Message</label>
-          <textarea class="w-full bg-surface border border-outline-variant rounded-lg p-sm focus:border-primary focus:ring-0 transition-all outline-none" placeholder="Tell me about your project..." rows="4"></textarea>
-        </div>
-        <button type="submit" class="w-full bg-primary text-on-primary py-sm rounded-lg font-bold hover:brightness-110 transition-all">
-          Send Message
-        </button>
-        <p class="font-label-mono text-label-mono text-secondary text-center" id="formNote"></p>
-      </form>
 
-      <div class="mt-xl pt-lg border-t border-surface-container space-y-sm">
-        <a href="mailto:treyvonmin@gmail.com" class="flex items-center gap-sm hover:text-primary transition-colors">
-          <span class="material-symbols-outlined text-primary">mail</span>
-          <span class="font-body-sm text-body-sm font-bold">treyvonmin@gmail.com</span>
-        </a>
-        <a href="tel:+66611125904" class="flex items-center gap-sm hover:text-primary transition-colors">
-          <span class="material-symbols-outlined text-primary">call</span>
-          <span class="font-body-sm text-body-sm font-bold">+66 61 112 5904</span>
-        </a>
-        <a href="https://linkedin.com/in/min-kaung-thant-1381a8217" target="_blank" class="flex items-center gap-sm hover:text-primary transition-colors">
-          <span class="material-symbols-outlined text-primary">link</span>
-          <span class="font-body-sm text-body-sm font-bold">linkedin.com/in/min-kaung-thant-1381a8217</span>
-        </a>
-        <a href="https://www.notion.so/Min-Kaung-ThantPortfolio-40a4d64b9e83837584ef81751d1cf5b5" target="_blank" class="flex items-center gap-sm hover:text-primary transition-colors">
-          <span class="material-symbols-outlined text-primary">article</span>
-          <span class="font-body-sm text-body-sm font-bold">Notion Portfolio →</span>
-        </a>
+  <!-- ══════════════════════════════════════════════
+       CONTACT
+  ══════════════════════════════════════════════ -->
+  <section id="contact" style="padding:8px 0 48px;">
+    <h2 class="serif" style="font-size:clamp(28px,5vw,40px);margin-bottom:20px;">Contact</h2>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+
+      <!-- Form -->
+      <div class="card" style="padding:28px;grid-column:1/-1;">
+        <p class="serif" style="font-size:20px;margin-bottom:6px;">Let's Work Together</p>
+        <p style="font-size:13px;color:var(--muted);margin-bottom:24px;">Open to full-time roles, research &amp; freelance in AI, NLP &amp; Robotics.</p>
+        <form id="contactForm" style="display:flex;flex-direction:column;gap:14px;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+            <div>
+              <label class="mono" style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:6px;">Name</label>
+              <input type="text" placeholder="Your name"
+                     style="width:100%;background:var(--bg);border:1.5px solid var(--border);border-radius:12px;padding:12px 14px;font-size:14px;font-family:'DM Sans',sans-serif;outline:none;transition:border-color 0.2s;"
+                     onfocus="this.style.borderColor='#003FDD'" onblur="this.style.borderColor='rgba(0,0,0,0.08)'"/>
+            </div>
+            <div>
+              <label class="mono" style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:6px;">Email</label>
+              <input type="email" placeholder="your@email.com"
+                     style="width:100%;background:var(--bg);border:1.5px solid var(--border);border-radius:12px;padding:12px 14px;font-size:14px;font-family:'DM Sans',sans-serif;outline:none;transition:border-color 0.2s;"
+                     onfocus="this.style.borderColor='#003FDD'" onblur="this.style.borderColor='rgba(0,0,0,0.08)'"/>
+            </div>
+          </div>
+          <div>
+            <label class="mono" style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:6px;">Message</label>
+            <textarea placeholder="Tell me about your project..." rows="4"
+                      style="width:100%;background:var(--bg);border:1.5px solid var(--border);border-radius:12px;padding:12px 14px;font-size:14px;font-family:'DM Sans',sans-serif;outline:none;resize:none;transition:border-color 0.2s;"
+                      onfocus="this.style.borderColor='#003FDD'" onblur="this.style.borderColor='rgba(0,0,0,0.08)'"></textarea>
+          </div>
+          <button type="submit"
+                  style="background:var(--card-dark);color:#fff;border:none;border-radius:999px;padding:14px 28px;font-size:14px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;transition:opacity 0.2s;"
+                  onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+            Send Message →
+          </button>
+          <p id="formNote" style="font-size:13px;color:#516600;text-align:center;"></p>
+        </form>
       </div>
-    </div>
 
+      <!-- Email -->
+      <a href="mailto:treyvonmin@gmail.com" class="card lift"
+         style="padding:22px 24px;display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--text);">
+        <div style="width:40px;height:40px;border-radius:12px;background:rgba(0,0,0,0.06);display:flex;align-items:center;justify-content:center;font-size:18px;">✉️</div>
+        <div>
+          <p style="font-size:11px;color:var(--muted);margin-bottom:2px;">Email</p>
+          <p style="font-size:13px;font-weight:500;">treyvonmin@gmail.com</p>
+        </div>
+      </a>
+
+      <!-- Phone -->
+      <a href="tel:+66611125904" class="card lift"
+         style="padding:22px 24px;display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--text);">
+        <div style="width:40px;height:40px;border-radius:12px;background:rgba(0,0,0,0.06);display:flex;align-items:center;justify-content:center;font-size:18px;">📞</div>
+        <div>
+          <p style="font-size:11px;color:var(--muted);margin-bottom:2px;">Phone</p>
+          <p style="font-size:13px;font-weight:500;">+66 61 112 5904</p>
+        </div>
+      </a>
+
+      <!-- LinkedIn -->
+      <a href="https://linkedin.com/in/min-kaung-thant-1381a8217" target="_blank" class="card lift"
+         style="padding:22px 24px;display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--text);">
+        <div style="width:40px;height:40px;border-radius:12px;background:rgba(0,0,0,0.06);display:flex;align-items:center;justify-content:center;font-size:18px;">🔗</div>
+        <div>
+          <p style="font-size:11px;color:var(--muted);margin-bottom:2px;">LinkedIn</p>
+          <p style="font-size:13px;font-weight:500;">min-kaung-thant-1381a8217</p>
+        </div>
+      </a>
+
+      <!-- Notion -->
+      <a href="https://www.notion.so/Min-Kaung-ThantPortfolio-40a4d64b9e83837584ef81751d1cf5b5" target="_blank" class="card lift"
+         style="padding:22px 24px;display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--text);">
+        <div style="width:40px;height:40px;border-radius:12px;background:rgba(0,0,0,0.06);display:flex;align-items:center;justify-content:center;font-size:18px;">📄</div>
+        <div>
+          <p style="font-size:11px;color:var(--muted);margin-bottom:2px;">Notion Portfolio</p>
+          <p style="font-size:13px;font-weight:500;">Full project details →</p>
+        </div>
+      </a>
+
+    </div>
   </section>
 
 </main>
 
-<!-- ── FOOTER ─────────────────────────────────────────── -->
-<footer class="w-full py-lg mt-xl bg-background border-t border-outline-variant">
-  <div class="flex flex-col md:flex-row justify-between items-center gap-md px-md max-w-container-max mx-auto">
-    <div>
-      <p class="font-label-mono text-label-mono font-black text-on-background">MIN KAUNG THANT</p>
-      <p class="font-body-sm text-body-sm text-tertiary mt-xs">© 2026 Min Kaung Thant · Robotics &amp; AI Engineer · Bangkok</p>
-    </div>
-    <div class="flex gap-md">
-      <a class="font-body-sm text-body-sm text-tertiary hover:text-primary transition-all underline underline-offset-4"
-        href="https://linkedin.com/in/min-kaung-thant-1381a8217" target="_blank">LinkedIn</a>
-      <a class="font-body-sm text-body-sm text-tertiary hover:text-primary transition-all underline underline-offset-4"
-        href="https://www.notion.so/Min-Kaung-ThantPortfolio-40a4d64b9e83837584ef81751d1cf5b5" target="_blank">Notion</a>
-      <a class="font-body-sm text-body-sm text-tertiary hover:text-primary transition-all underline underline-offset-4"
-        href="mailto:treyvonmin@gmail.com">Email</a>
-    </div>
+
+<!-- ══════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════ -->
+<footer style="border-top:1px solid var(--border);padding:28px 20px;max-width:860px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+  <div>
+    <p class="mono" style="font-size:11px;font-weight:600;">MIN KAUNG THANT</p>
+    <p style="font-size:12px;color:var(--muted);margin-top:2px;">© 2026 · Robotics &amp; AI Engineer · Bangkok</p>
+  </div>
+  <div style="display:flex;gap:20px;">
+    <a href="https://linkedin.com/in/min-kaung-thant-1381a8217" target="_blank" style="font-size:13px;color:var(--muted);text-decoration:none;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--muted)'">LinkedIn</a>
+    <a href="https://www.notion.so/Min-Kaung-ThantPortfolio-40a4d64b9e83837584ef81751d1cf5b5" target="_blank" style="font-size:13px;color:var(--muted);text-decoration:none;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--muted)'">Notion</a>
+    <a href="mailto:treyvonmin@gmail.com" style="font-size:13px;color:var(--muted);text-decoration:none;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--muted)'">Email</a>
   </div>
 </footer>
 
-<!-- ── MOBILE BOTTOM NAV ──────────────────────────────── -->
-<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 rounded-t-xl bg-surface border-t border-outline-variant shadow-lg h-xl flex justify-around items-center px-sm">
-  <a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl p-xs" href="#">
-    <span class="material-symbols-outlined">home</span>
-    <span class="font-label-mono text-[10px]">Home</span>
-  </a>
-  <a class="flex flex-col items-center justify-center text-on-surface-variant p-xs" href="#work">
-    <span class="material-symbols-outlined">rocket_launch</span>
-    <span class="font-label-mono text-[10px]">Work</span>
-  </a>
-  <a class="flex flex-col items-center justify-center text-on-surface-variant p-xs" href="#certs">
-    <span class="material-symbols-outlined">workspace_premium</span>
-    <span class="font-label-mono text-[10px]">Certs</span>
-  </a>
-  <a class="flex flex-col items-center justify-center text-on-surface-variant p-xs" href="#about">
-    <span class="material-symbols-outlined">person_search</span>
-    <span class="font-label-mono text-[10px]">About</span>
-  </a>
-  <a class="flex flex-col items-center justify-center text-on-surface-variant p-xs" href="#contact">
-    <span class="material-symbols-outlined">alternate_email</span>
-    <span class="font-label-mono text-[10px]">Contact</span>
-  </a>
+
+<!-- ══════════════════════════════════════════════
+     MOBILE BOTTOM NAV
+══════════════════════════════════════════════ -->
+<nav style="display:none;position:fixed;bottom:0;left:0;width:100%;background:var(--card);border-top:1px solid var(--border);padding:10px 0 16px;z-index:50;" id="mobileNav">
+  <div style="display:flex;justify-content:space-around;">
+    <a href="#" style="display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;color:var(--text);">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+      <span style="font-size:10px;color:var(--muted);">Home</span>
+    </a>
+    <a href="#work" style="display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;color:var(--text);">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      <span style="font-size:10px;color:var(--muted);">Work</span>
+    </a>
+    <a href="#certs" style="display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;color:var(--text);">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+      <span style="font-size:10px;color:var(--muted);">Certs</span>
+    </a>
+    <a href="#about" style="display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;color:var(--text);">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      <span style="font-size:10px;color:var(--muted);">About</span>
+    </a>
+    <a href="#contact" style="display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;color:var(--text);">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      <span style="font-size:10px;color:var(--muted);">Contact</span>
+    </a>
+  </div>
 </nav>
 
 <script>
+  // show mobile nav on small screens
+  function checkMobile() {
+    document.getElementById('mobileNav').style.display = window.innerWidth < 768 ? 'block' : 'none';
+  }
+  checkMobile();
+  window.addEventListener('resize', checkMobile);
+
+  // contact form
   document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
     const note = document.getElementById('formNote');
     note.textContent = '✓ Thanks! I\'ll be in touch soon.';
     this.reset();
     setTimeout(() => note.textContent = '', 4000);
-  });
-
-  // Mobile bottom nav active indicator
-  const mobileNavLinks = document.querySelectorAll('nav.md\\:hidden a');
-  mobileNavLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      mobileNavLinks.forEach(l => {
-        l.classList.remove('bg-primary-container', 'text-on-primary-container', 'rounded-xl');
-        l.classList.add('text-on-surface-variant');
-      });
-      link.classList.add('bg-primary-container', 'text-on-primary-container', 'rounded-xl');
-      link.classList.remove('text-on-surface-variant');
-    });
   });
 </script>
 </body>
